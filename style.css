@@ -13,15 +13,15 @@ body {
 
 :root {
     /* GROUND */
-    --ground-width: 16em;
+    --ground-width: 12em;
     --ground-height: .75em;
 
     /* CUBE 1 */
-    --cube-1-width: 6em;
-    --cube-1-height: 12em;
+    --cube-1-width: 4em;
+    --cube-1-height: 8em;
 
     /* CUBE 2 */
-    --cube-2-width: 4em;
+    --cube-2-width: 3em;
 }
 
 /* SCENE */
@@ -30,9 +30,8 @@ body {
     width: 100vw;
 	height: 100vh;
 
-    perspective: 30em;
-	transform-style: preserve-3d;
-    perspective-origin: center;
+    /* transform: perspective(40em); 
+    transform-style: preserve-3d; */
 
     display: flex;
     justify-content: center;
@@ -44,18 +43,24 @@ body {
 }
 
 .scene-container-1 {
-    transition: 4s;
-}
-
-.scene-container-1:hover {
-    transform: rotateY(-360deg);
+    transform: rotateX(-30deg) rotateY(45deg);
 }
 
 .scene-container-2 {
-    transform: rotateY(-45deg);
+    transform: rotateX(90deg);
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6em 2em;
 }
 
 .scene-container-3 {
+    transform: rotateX(-90deg);
+
+    cursor: pointer;
+}
+
+.scene-container-4 {
     display: flex;
     justify-content: center;
     align-items: end;
