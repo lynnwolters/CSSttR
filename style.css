@@ -1,3 +1,4 @@
+/* GENERAL */
 * {
 	margin: 0;	
     padding: 0;
@@ -9,6 +10,21 @@ body {
     font-family: 'Urbanist', sans-serif;
     font-weight: bold;
 }
+
+:root {
+    /* GROUND */
+    --ground-width: 16em;
+    --ground-height: .75em;
+
+    /* CUBE 1 */
+    --cube-1-width: 6em;
+    --cube-1-height: 12em;
+
+    /* CUBE 2 */
+    --cube-2-width: 4em;
+}
+
+/* SCENE */
 
 .scene {
     width: 100vw;
@@ -28,14 +44,24 @@ body {
 }
 
 .scene-container-1 {
-    transform: rotateY(-45deg);
+    transition: 4s;
+}
+
+.scene-container-1:hover {
+    transform: rotateY(-360deg);
 }
 
 .scene-container-2 {
+    transform: rotateY(-45deg);
+}
+
+.scene-container-3 {
     display: flex;
     justify-content: center;
     align-items: end;
 }
+
+/* GROUND */
 
 .ground {
     height: 0;
@@ -52,42 +78,44 @@ body {
 	background-color: blue;
     opacity: .4;
 
-    border: .1em solid black;
+    border: .05em solid white;
 }
 
 .ground > div:nth-of-type(-n+4) {
-    width: 24em;
-    height: 1em;
+    width: var(--ground-width);
+    height: var(--ground-height);
 }
 
 .ground > div:nth-last-of-type(-n+2) {
-    width: 24em;
+    width: var(--ground-width);
     aspect-ratio: 1/1;
 }
 
 .ground-front {
-	transform: rotateY(0deg) translateZ(12em);
+	transform: rotateY(0deg) translateZ(calc(var(--ground-width) / 2));
 }
 
 .ground-back {
-	transform: rotateY(0deg) translateZ(-12em);
+	transform: rotateY(0deg) translateZ(calc(var(--ground-width) / -2));
 }
 
 .ground-right {
-	transform: rotateY(90deg) translateZ(12em);
+	transform: rotateY(90deg) translateZ(calc(var(--ground-width) / 2));
 }
 
 .ground-left {
-	transform: rotateY(90deg) translateZ(-12em);
+	transform: rotateY(90deg) translateZ(calc(var(--ground-width) / -2));
 }
 
 .ground-top {
-	transform: rotateX(90deg) translateZ(12em);
+	transform: rotateX(90deg) translateZ(calc(var(--ground-width) / 2));
 }
 
 .ground-bottom {
-	transform: rotateX(90deg) translateZ(11em);
+	transform: rotateX(90deg) translateZ(calc(var(--ground-width) / 2 - var(--ground-height)));
 }
+
+/* CUBE 1 */
 
 .cube-1 {
 	display: grid;
@@ -102,49 +130,51 @@ body {
 	background-color: red;
     opacity: .4;
 
-    border: .1em solid black;
+    border: .05em solid white;
 }
 
 .cube-1 > div:nth-of-type(-n+4) {
-    width: 8em;
-    height: 16em;
+    width: var(--cube-1-width);
+    height: var(--cube-1-height);
 }
 
 .cube-1 > div:nth-last-of-type(-n+2) {
-    width: 8em;
+    width: var(--cube-1-width);
     aspect-ratio: 1/1;
 }
 
 .cube-1-front {
-	transform: rotateY(0deg) translateZ(4em);
+	transform: rotateY(0deg) translateZ(calc(var(--cube-1-width) / 2));
 }
 
 .cube-1-back {
-	transform: rotateY(0deg) translateZ(-4em);
+	transform: rotateY(0deg) translateZ(calc(var(--cube-1-width) / -2));
 }
 
 .cube-1-right {
-	transform: rotateY(90deg) translateZ(4em);
+	transform: rotateY(90deg) translateZ(calc(var(--cube-1-width) / 2));
 }
 
 .cube-1-left {
-	transform: rotateY(90deg) translateZ(-4em);
+	transform: rotateY(90deg) translateZ(calc(var(--cube-1-width) / -2));
 }
 
 .cube-1-top {
-	transform: rotateX(90deg) translateZ(4em);
+	transform: rotateX(90deg) translateZ(calc(var(--cube-1-width) / 2));
 }
 
 .cube-1-bottom {
-	transform: rotateX(90deg) translateZ(-12em);
+	transform: rotateX(90deg) translateZ(calc(var(--cube-1-width) / 2 - var(--cube-1-height)));
 }
+
+/* CUBE 2 */
 
 .cube-2 {
 	display: grid;
 }
 
 .cube-2 div {
-    width: 8em;
+    width: var(--cube-2-width);
     aspect-ratio: 1/1;
 
     grid-area: 1/1;
@@ -155,29 +185,29 @@ body {
 	background-color: green;
     opacity: .4;
 
-    border: .1em solid black;
+    border: .05em solid white;
 }
 
 .cube-2-front {
-	transform: rotateY(0deg) translateZ(4em);
+	transform: rotateY(0deg) translateZ(calc(var(--cube-2-width) / 2));
 }
 
 .cube-2-back {
-	transform: rotateY(0deg) translateZ(-4em);
+	transform: rotateY(0deg) translateZ(calc(var(--cube-2-width) / -2));
 }
 
 .cube-2-right {
-	transform: rotateY(90deg) translateZ(4em);
+	transform: rotateY(90deg) translateZ(calc(var(--cube-2-width) / 2));
 }
 
 .cube-2-left {
-	transform: rotateY(90deg) translateZ(-4em);
+	transform: rotateY(90deg) translateZ(calc(var(--cube-2-width) / -2));
 }
 
 .cube-2-top {
-	transform: rotateX(90deg) translateZ(4em);
+	transform: rotateX(90deg) translateZ(calc(var(--cube-2-width) / 2));
 }
 
 .cube-2-bottom {
-	transform: rotateX(90deg) translateZ(-4em);
+	transform: rotateX(90deg) translateZ(calc(var(--cube-2-width) / -2));
 }
