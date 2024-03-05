@@ -13,7 +13,7 @@ body {
 
 :root {
     --ground-width: 12em;
-    --ground-height: .75em;
+    --ground-height: 1em;
 
     --cube-1-width: 4em;
     --cube-1-height: 8em;
@@ -21,4 +21,8 @@ body {
     --cube-2-width: 3em;
 
     --gap: 2em;
+
+    --color-1: #FFFFFF;
+    --color-2: #000000;
+    --color-3: #ff0000;
 }
