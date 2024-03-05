@@ -1,5 +1,5 @@
 main {
-	height: calc(100dvh - 6em);
+	height: 100dvh;
 
     display: grid;
     justify-content: center;
@@ -11,19 +11,99 @@ main, main * {
 }
 
 main > article {
-    transform: 
-        rotateX(-30deg)
-        rotateY(45deg) 
-        translateX(var(--x, 0em))
-        translateZ(var(--z, 0em))
-        rotateY(var(--ry, 0deg))
-    ;
-
     grid-area: 1/1;
 
-    cursor: pointer;
-
     transition: 2s;
+}
+
+main > article:nth-of-type(1) {
+    transform: 
+        rotateX(-30deg)
+        rotateY(-45deg) 
+        translateX(var(--x, 0em))
+        translateZ(var(--z, 0em))
+        rotateY(var(--ry-tile-1, 0deg))
+    ;
+}
+
+main > article:nth-of-type(2) {
+    transform: 
+        rotateX(-30deg)
+        rotateY(-45deg) 
+        translateX(var(--x, 0em))
+        translateZ(var(--z, 0em))
+        rotateY(var(--ry-tile-2, 0deg))
+    ;
+}
+
+main > article:nth-of-type(3) {
+    transform: 
+        rotateX(-30deg)
+        rotateY(-45deg) 
+        translateX(var(--x, 0em))
+        translateZ(var(--z, 0em))
+        rotateY(var(--ry-tile-3, 0deg))
+    ;
+}
+
+main > article:nth-of-type(4) {
+    transform: 
+        rotateX(-30deg)
+        rotateY(-45deg) 
+        translateX(var(--x, 0em))
+        translateZ(var(--z, 0em))
+        rotateY(var(--ry-tile-4, 0deg))
+    ;
+}
+
+main > article:nth-of-type(5) {
+    transform: 
+        rotateX(-30deg)
+        rotateY(-45deg) 
+        translateX(var(--x, 0em))
+        translateZ(var(--z, 0em))
+        rotateY(var(--ry-tile-5, 0deg))
+    ;
+}
+
+main > article:nth-of-type(6) {
+    transform: 
+        rotateX(-30deg)
+        rotateY(-45deg) 
+        translateX(var(--x, 0em))
+        translateZ(var(--z, 0em))
+        rotateY(var(--ry-tile-6, 0deg))
+    ;
+}
+
+main > article:nth-of-type(7) {
+    transform: 
+        rotateX(-30deg)
+        rotateY(-45deg) 
+        translateX(var(--x, 0em))
+        translateZ(var(--z, 0em))
+        rotateY(var(--ry-tile-7, 0deg))
+    ;
+}
+
+main > article:nth-of-type(8) {
+    transform: 
+        rotateX(-30deg)
+        rotateY(-45deg) 
+        translateX(var(--x, 0em))
+        translateZ(var(--z, 0em))
+        rotateY(var(--ry-tile-8, 0deg))
+    ;
+}
+
+main > article:nth-of-type(9) {
+    transform: 
+        rotateX(-30deg)
+        rotateY(-45deg) 
+        translateX(var(--x, 0em))
+        translateZ(var(--z, 0em))
+        rotateY(var(--ry-tile-9, 0deg))
+    ;
 }
 
 main > article:nth-of-type(1) {
@@ -62,16 +142,112 @@ main > article:nth-of-type(9) {
     --z: calc(var(--ground-width) * 1 + var(--gap));
 }
 
-html:has([value="view-90-deg"]:checked) {
-    --ry: 90deg;
+html:has([value="view-90-deg-tile-1"]:checked) {
+    --ry-tile-1: -90deg;
 }
 
-html:has([value="view-180-deg"]:checked) {
-    --ry: 180deg;
+html:has([value="view-180-deg-tile-1"]:checked) {
+    --ry-tile-1: -180deg;
 }
 
-html:has([value="view-270-deg"]:checked) {
-    --ry: 270deg;
+html:has([value="view-270-deg-tile-1"]:checked) {
+    --ry-tile-1: -270deg;
+}
+
+html:has([value="view-90-deg-tile-2"]:checked) {
+    --ry-tile-2: -90deg;
+}
+
+html:has([value="view-180-deg-tile-2"]:checked) {
+    --ry-tile-2: -180deg;
+}
+
+html:has([value="view-270-deg-tile-2"]:checked) {
+    --ry-tile-2: -270deg;
+}
+
+html:has([value="view-90-deg-tile-3"]:checked) {
+    --ry-tile-3: -90deg;
+}
+
+html:has([value="view-180-deg-tile-3"]:checked) {
+    --ry-tile-3: -180deg;
+}
+
+html:has([value="view-270-deg-tile-3"]:checked) {
+    --ry-tile-3: -270deg;
+}
+
+html:has([value="view-90-deg-tile-4"]:checked) {
+    --ry-tile-4: -90deg;
+}
+
+html:has([value="view-180-deg-tile-4"]:checked) {
+    --ry-tile-4: -180deg;
+}
+
+html:has([value="view-270-deg-tile-4"]:checked) {
+    --ry-tile-4: -270deg;
+}
+
+html:has([value="view-90-deg-tile-5"]:checked) {
+    --ry-tile-4: -90deg;
+}
+
+html:has([value="view-180-deg-tile-5"]:checked) {
+    --ry-tile-5: -180deg;
+}
+
+html:has([value="view-270-deg-tile-5"]:checked) {
+    --ry-tile-5: -270deg;
+}
+
+html:has([value="view-90-deg-tile-6"]:checked) {
+    --ry-tile-6: -90deg;
+}
+
+html:has([value="view-180-deg-tile-6"]:checked) {
+    --ry-tile-6: -180deg;
+}
+
+html:has([value="view-270-deg-tile-6"]:checked) {
+    --ry-tile-6: -270deg;
+}
+
+html:has([value="view-90-deg-tile-7"]:checked) {
+    --ry-tile-7: -90deg;
+}
+
+html:has([value="view-180-deg-tile-7"]:checked) {
+    --ry-tile-7: -180deg;
+}
+
+html:has([value="view-270-deg-tile-7"]:checked) {
+    --ry-tile-7: -270deg;
+}
+
+html:has([value="view-90-deg-tile-8"]:checked) {
+    --ry-tile-8: -90deg;
+}
+
+html:has([value="view-180-deg-tile-8"]:checked) {
+    --ry-tile-8: -180deg;
+}
+
+html:has([value="view-270-deg-tile-8"]:checked) {
+    --ry-tile-8: -270deg;
+}
+
+html:has([value="view-90-deg-tile-9"]:checked) {
+    --ry-tile-9: -90deg;
+}
+
+html:has([value="view-180-deg-tile-9"]:checked) {
+    --ry-tile-9: -180deg;
+}
+
+html:has([value="view-270-deg-tile-9"]:checked) {
+    --ry-tile-9: -270deg;
 }
 
 main article > div {
@@ -119,10 +295,57 @@ main article > div > div:nth-of-type(4) {
 }
 
 main article > div > div:nth-of-type(5) {
+    position: relative;
 	transform: rotateX(90deg) translateZ(calc(var(--ground-width) / 2));
 
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+}
+
+main article > div > div:nth-of-type(5) form {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scale(1.4);
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    background-color: blue;
+}
+
+main article > div > div:nth-of-type(5) form label {
+    width: 2em;
+    aspect-ratio: 1/1;
+
+    cursor: pointer;
+}
+
+main article > div > div:nth-of-type(5) form label:nth-of-type(1) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+main article > div > div:nth-of-type(5) form label:nth-of-type(2) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+main article > div > div:nth-of-type(5) form label:nth-of-type(3) {
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+main article > div > div:nth-of-type(5) form label:nth-of-type(4) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+main article > div > div:nth-of-type(5) form label input {
+    width: 100%;
+    height: 100%;
 }
 
 main article > div > div:nth-of-type(6) {
