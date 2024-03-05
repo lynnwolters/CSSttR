@@ -317,8 +317,12 @@ main article > div > div:nth-of-type(5) form {
 }
 
 main article > div > div:nth-of-type(5) form label {
-    width: 2em;
-    aspect-ratio: 1/1;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     cursor: pointer;
 }
@@ -344,8 +348,8 @@ main article > div > div:nth-of-type(5) form label:nth-of-type(4) {
 }
 
 main article > div > div:nth-of-type(5) form label input {
-    width: 100%;
-    height: 100%;
+    width: 2em;
+    aspect-ratio: 1/1;
 }
 
 main article > div > div:nth-of-type(6) {
