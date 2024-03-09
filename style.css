@@ -1,3 +1,7 @@
+/* ******** */
+/* GENERAL */
+/* ****** */
+
 * {
 	margin: 0;	
     padding: 0;
@@ -11,12 +15,19 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* ***** */
+/* ROOT */
+/* *** */
+
 :root {
+    /* TILE PLANE SIZES */
     --ground-width: 12em;
     --ground-height: 1em;
 
+    /* GAP BETWEEN TILES */
     --gap: 4em;
 
+    /* COLORS */
     --color-1: #FFFFFF;
     --color-2: #000000;
     --color-3: #ff0000;
