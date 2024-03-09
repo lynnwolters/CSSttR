@@ -9,6 +9,8 @@
 }
 
 body {
+    background: radial-gradient(#F9FEFF, #D6F1FA);
+
     font-family: 'Urbanist', sans-serif;
     font-weight: bold;
     font-size: .8em;
@@ -22,13 +24,15 @@ body {
 :root {
     /* TILE PLANE SIZES */
     --ground-width: 12em;
-    --ground-height: 1em;
+    --ground-height: 1.4em;
 
     /* GAP BETWEEN TILES */
     --gap: 4em;
 
     /* COLORS */
-    --color-1: #FFFFFF;
+    --color-1: #FEFFF0;
     --color-2: #000000;
-    --color-3: #ff0000;
+    --color-3: #c9ea71;
+    --color-4: #7C6959;
+    --color-5: #4B423B;
 }
