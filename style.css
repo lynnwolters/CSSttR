@@ -23,8 +23,12 @@ body {
 
 :root {
     /* TILE PLANE SIZES */
-    --ground-width: 12em;
-    --ground-height: 1.4em;
+    --tile-width: 12em;
+    --tile-height: 1.4em;
+
+    /* BUILDING PLANE SIZES */
+    --building-height: 8em;
+    --building-width: 4em;
 
     /* GAP BETWEEN TILES */
     --gap: 4em;
