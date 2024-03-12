@@ -30,7 +30,7 @@ main > article {
     --tile-height: 1.6em;
 
     grid-area: 1/1;
-    --gap: 6em;
+    --gap: 4em;
 
     transition: 2s;
 }
@@ -51,7 +51,7 @@ main article > div > div {
     grid-area: 1/1;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
 }
 
 /* SET TILE PLANE SIZES FOR FRONT, BACK, RIGHT AND LEFT */
@@ -73,7 +73,7 @@ main article > div > div:nth-last-of-type(-n+2) {
 main article > div > div:nth-of-type(1) {
 	transform: rotateY(0deg) translateZ(calc(var(--tile-width) / 2));
 
-    background-color: var(--color-4);
+    background-color: var(--tile-light-front, var(--color-4));
 }
 
 /* TILE PLANE BACK POSITIONING */
@@ -81,7 +81,7 @@ main article > div > div:nth-of-type(1) {
 main article > div > div:nth-of-type(2) {
 	transform: rotateY(0deg) translateZ(calc(var(--tile-width) / -2));
 
-    background-color: var(--color-5);
+    background-color: var(--tile-light-back, var(--color-5));
 }
 
 /* TILE PLANE RIGHT POSITIONING */
@@ -89,7 +89,7 @@ main article > div > div:nth-of-type(2) {
 main article > div > div:nth-of-type(3) {
 	transform: rotateY(90deg) translateZ(calc(var(--tile-width) / 2));
 
-    background-color: var(--color-5);
+    background-color: var(--tile-light-right, var(--color-5));
 }
 
 /* TILE PLANE LEFT POSITIONING */
@@ -97,7 +97,7 @@ main article > div > div:nth-of-type(3) {
 main article > div > div:nth-of-type(4) {
 	transform: rotateY(90deg) translateZ(calc(var(--tile-width) / -2));
 
-    background-color: var(--color-5);
+    background-color: var(--tile-light-left, var(--color-5));
 }
 
 /* TILE PLANE TOP POSITIONING + GRID */
@@ -304,14 +304,18 @@ main > article:nth-of-type(1) {
 
 body:has([value="view-90-deg-tile-1"]:checked) {
     --ry-tile-1: -90deg;
+    /* --tile-light-right: var(--color-4);
+    --tile-light-front: var(--color-5); */
 }
 
 body:has([value="view-180-deg-tile-1"]:checked) {
     --ry-tile-1: -180deg;
+    /* --tile-light-back: var(--color-4); */
 }
 
 body:has([value="view-270-deg-tile-1"]:checked) {
     --ry-tile-1: -270deg;
+    /* --tile-light-left: var(--color-4); */
 }
 
 body:has([value="view-0-deg-tile-1"]:checked) {
@@ -320,7 +324,7 @@ body:has([value="view-0-deg-tile-1"]:checked) {
 
 /* DRAWING PATH */
 
-main article:nth-of-type(1) > div > div:nth-of-type(5) > :is(:nth-of-type(11), :nth-of-type(12), :nth-of-type(13), :nth-of-type(8), :nth-of-type(3)) {
+main article:nth-of-type(1) > div > div:nth-of-type(5) > :is(:nth-of-type(11), :nth-of-type(12), :nth-of-type(13), :nth-of-type(18), :nth-of-type(23)) {
     background-color: var(--color-1);
 }
 
@@ -359,14 +363,18 @@ main > article:nth-of-type(2) {
 
 body:has([value="view-90-deg-tile-2"]:checked) {
     --ry-tile-2: -90deg;
+    /* --tile-light-right: var(--color-4);
+    --tile-light-front: var(--color-5); */
 }
 
 body:has([value="view-180-deg-tile-2"]:checked) {
     --ry-tile-2: -180deg;
+    /* --tile-light-back: var(--color-4); */
 }
 
 body:has([value="view-270-deg-tile-2"]:checked) {
     --ry-tile-2: -270deg;
+    /* --tile-light-left: var(--color-4); */
 }
 
 body:has([value="view-0-deg-tile-2"]:checked) {
@@ -375,7 +383,7 @@ body:has([value="view-0-deg-tile-2"]:checked) {
 
 /* DRAWING PATH */
 
-main article:nth-of-type(2) > div > div:nth-of-type(5) > :is(:nth-of-type(10), :nth-of-type(9), :nth-of-type(8), :nth-of-type(13), :nth-of-type(18), :nth-of-type(23)) {
+main article:nth-of-type(2) > div > div:nth-of-type(5) > :is(:nth-of-type(14), :nth-of-type(12), :nth-of-type(11), :nth-of-type(13), :nth-of-type(19), :nth-of-type(24)) {
     background-color: var(--color-1);
 }
 
@@ -404,14 +412,18 @@ main > article:nth-of-type(3) {
 
 body:has([value="view-90-deg-tile-3"]:checked) {
     --ry-tile-3: -90deg;
+    /* --tile-light-right: var(--color-4);
+    --tile-light-front: var(--color-5); */
 }
 
 body:has([value="view-180-deg-tile-3"]:checked) {
     --ry-tile-3: -180deg;
+    /* --tile-light-back: var(--color-4); */
 }
 
 body:has([value="view-270-deg-tile-3"]:checked) {
     --ry-tile-3: -270deg;
+    /* --tile-light-left: var(--color-4); */
 }
 
 body:has([value="view-0-deg-tile-3"]:checked) {
@@ -420,7 +432,7 @@ body:has([value="view-0-deg-tile-3"]:checked) {
 
 /* DRAWING PATH */
 
-main article:nth-of-type(3) > div > div:nth-of-type(5) > :is(:nth-of-type(6), :nth-of-type(7), :nth-of-type(12), :nth-of-type(17), :nth-of-type(18), :nth-of-type(23)) {
+main article:nth-of-type(3) > div > div:nth-of-type(5) > :is(:nth-of-type(11), :nth-of-type(12), :nth-of-type(7), :nth-of-type(8), :nth-of-type(9), :nth-of-type(4)) {
     background-color: var(--color-1);
 }
 
@@ -448,14 +460,18 @@ main > article:nth-of-type(4) {
 
 body:has([value="view-90-deg-tile-4"]:checked) {
     --ry-tile-4: -90deg;
+    /* --tile-light-right: var(--color-4);
+    --tile-light-front: var(--color-5); */
 }
 
 body:has([value="view-180-deg-tile-4"]:checked) {
     --ry-tile-4: -180deg;
+    /* --tile-light-back: var(--color-4); */
 }
 
 body:has([value="view-270-deg-tile-4"]:checked) {
     --ry-tile-4: -270deg;
+    /* --tile-light-left: var(--color-4); */
 }
 
 body:has([value="view-0-deg-tile-4"]:checked) {
@@ -464,7 +480,7 @@ body:has([value="view-0-deg-tile-4"]:checked) {
 
 /* DRAWING PATH */
 
-main article:nth-of-type(4) > div > div:nth-of-type(5) > :is(:nth-of-type(10), :nth-of-type(9), :nth-of-type(8), :nth-of-type(13), :nth-of-type(18), :nth-of-type(23)) {
+main article:nth-of-type(4) > div > div:nth-of-type(5) > :is(:nth-of-type(11), :nth-of-type(12), :nth-of-type(13), :nth-of-type(14), :nth-of-type(19), :nth-of-type(24)) {
     background-color: var(--color-1);
 }
 
@@ -488,14 +504,18 @@ main > article:nth-of-type(5) {
 
 body:has([value="view-90-deg-tile-5"]:checked) {
     --ry-tile-5: -90deg;
+    /* --tile-light-right: var(--color-4);
+    --tile-light-front: var(--color-5); */
 }
 
 body:has([value="view-180-deg-tile-5"]:checked) {
     --ry-tile-5: -180deg;
+    /* --tile-light-back: var(--color-4); */
 }
 
 body:has([value="view-270-deg-tile-5"]:checked) {
     --ry-tile-5: -270deg;
+    /* --tile-light-left: var(--color-4); */
 }
 
 body:has([value="view-0-deg-tile-5"]:checked) {
@@ -504,7 +524,7 @@ body:has([value="view-0-deg-tile-5"]:checked) {
 
 /* DRAWING PATH */
 
-main article:nth-of-type(5) > div > div:nth-of-type(5) > :is(:nth-of-type(6), :nth-of-type(7), :nth-of-type(8), :nth-of-type(3), :nth-of-type(24), :nth-of-type(19), :nth-of-type(20)) {
+main article:nth-of-type(5) > div > div:nth-of-type(5) > :is(:nth-of-type(6), :nth-of-type(7), :nth-of-type(2), :nth-of-type(23), :nth-of-type(18), :nth-of-type(19), :nth-of-type(20)) {
     background-color: var(--color-1);
 }
 
@@ -532,14 +552,18 @@ main > article:nth-of-type(6) {
 
 body:has([value="view-90-deg-tile-6"]:checked) {
     --ry-tile-6: -90deg;
+    /* --tile-light-right: var(--color-4);
+    --tile-light-front: var(--color-5); */
 }
 
 body:has([value="view-180-deg-tile-6"]:checked) {
     --ry-tile-6: -180deg;
+    /* --tile-light-back: var(--color-4); */
 }
 
 body:has([value="view-270-deg-tile-6"]:checked) {
     --ry-tile-6: -270deg;
+    /* --tile-light-left: var(--color-4); */
 }
 
 body:has([value="view-0-deg-tile-6"]:checked) {
@@ -548,7 +572,7 @@ body:has([value="view-0-deg-tile-6"]:checked) {
 
 /* DRAWING PATH */
 
-main article:nth-of-type(6) > div > div:nth-of-type(5) > :is(:nth-of-type(3), :nth-of-type(8), :nth-of-type(13), :nth-of-type(12), :nth-of-type(17), :nth-of-type(22),) {
+main article:nth-of-type(6) > div > div:nth-of-type(5) > :is(:nth-of-type(6), :nth-of-type(7), :nth-of-type(8), :nth-of-type(13), :nth-of-type(14), :nth-of-type(15),) {
     background-color: var(--color-1);
 }
 
@@ -577,14 +601,18 @@ main > article:nth-of-type(7) {
 
 body:has([value="view-90-deg-tile-7"]:checked) {
     --ry-tile-7: -90deg;
+    /* --tile-light-right: var(--color-4);
+    --tile-light-front: var(--color-5); */
 }
 
 body:has([value="view-180-deg-tile-7"]:checked) {
     --ry-tile-7: -180deg;
+    /* --tile-light-back: var(--color-4); */
 }
 
 body:has([value="view-270-deg-tile-7"]:checked) {
     --ry-tile-7: -270deg;
+    /* --tile-light-left: var(--color-4); */
 }
 
 body:has([value="view-0-deg-tile-7"]:checked) {
@@ -593,7 +621,7 @@ body:has([value="view-0-deg-tile-7"]:checked) {
 
 /* DRAWING PATH */
 
-main article:nth-of-type(7) > div > div:nth-of-type(5) > :is(:nth-of-type(11), :nth-of-type(12), :nth-of-type(13), :nth-of-type(8), :nth-of-type(3)) {
+main article:nth-of-type(7) > div > div:nth-of-type(5) > :is(:nth-of-type(11), :nth-of-type(12), :nth-of-type(13), :nth-of-type(18), :nth-of-type(23)) {
     background-color: var(--color-1);
 }
 
@@ -621,14 +649,18 @@ main > article:nth-of-type(8) {
 
 body:has([value="view-90-deg-tile-8"]:checked) {
     --ry-tile-8: -90deg;
+    /* --tile-light-right: var(--color-4);
+    --tile-light-front: var(--color-5); */
 }
 
 body:has([value="view-180-deg-tile-8"]:checked) {
     --ry-tile-8: -180deg;
+    /* --tile-light-back: var(--color-4); */
 }
 
 body:has([value="view-270-deg-tile-8"]:checked) {
     --ry-tile-8: -270deg;
+    /* --tile-light-left: var(--color-4); */
 }
 
 body:has([value="view-0-deg-tile-8"]:checked) {
@@ -637,7 +669,7 @@ body:has([value="view-0-deg-tile-8"]:checked) {
 
 /* DRAWING PATH */
 
-main article:nth-of-type(8) > div > div:nth-of-type(5) > :is(:nth-of-type(22), :nth-of-type(17), :nth-of-type(12), :nth-of-type(7), :nth-of-type(8), :nth-of-type(9), :nth-of-type(14), :nth-of-type(19), :nth-of-type(20)) {
+main article:nth-of-type(8) > div > div:nth-of-type(5) > :is(:nth-of-type(6), :nth-of-type(7), :nth-of-type(12), :nth-of-type(17), :nth-of-type(18), :nth-of-type(19), :nth-of-type(14), :nth-of-type(9), :nth-of-type(4)) {
     background-color: var(--color-1);
 }
 
@@ -666,14 +698,18 @@ main > article:nth-of-type(9) {
 
 body:has([value="view-90-deg-tile-9"]:checked) {
     --ry-tile-9: -90deg;
+    /* --tile-light-right: var(--color-4);
+    --tile-light-front: var(--color-5); */
 }
 
 body:has([value="view-180-deg-tile-9"]:checked) {
     --ry-tile-9: -180deg;
+    /* --tile-light-back: var(--color-4); */
 }
 
 body:has([value="view-270-deg-tile-9"]:checked) {
     --ry-tile-9: -270deg;
+    /* --tile-light-left: var(--color-4); */
 }
 
 body:has([value="view-0-deg-tile-9"]:checked) {
@@ -682,6 +718,6 @@ body:has([value="view-0-deg-tile-9"]:checked) {
 
 /* DRAWING PATH */
 
-main article:nth-of-type(9) > div > div:nth-of-type(5) > :is(:nth-of-type(2), :nth-of-type(7), :nth-of-type(12), :nth-of-type(17), :nth-of-type(22)) {
+main article:nth-of-type(9) > div > div:nth-of-type(5) > :is(:nth-of-type(6), :nth-of-type(7), :nth-of-type(8), :nth-of-type(9), :nth-of-type(10)) {
     background-color: var(--color-1);
 }
