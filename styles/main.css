@@ -369,6 +369,10 @@ body:has([value="view-270-deg-tile-2"]:checked) {
     --ry-tile-2: -270deg;
 }
 
+body:has([value="view-0-deg-tile-2"]:checked) {
+    --ry-tile-2: -360deg;
+}
+
 /* DRAWING PATH */
 
 main article:nth-of-type(2) > div > div:nth-of-type(5) > :is(:nth-of-type(10), :nth-of-type(9), :nth-of-type(8), :nth-of-type(13), :nth-of-type(18), :nth-of-type(23)) {
@@ -408,6 +412,10 @@ body:has([value="view-180-deg-tile-3"]:checked) {
 
 body:has([value="view-270-deg-tile-3"]:checked) {
     --ry-tile-3: -270deg;
+}
+
+body:has([value="view-0-deg-tile-3"]:checked) {
+    --ry-tile-3: -360deg;
 }
 
 /* DRAWING PATH */
@@ -450,6 +458,10 @@ body:has([value="view-270-deg-tile-4"]:checked) {
     --ry-tile-4: -270deg;
 }
 
+body:has([value="view-0-deg-tile-4"]:checked) {
+    --ry-tile-4: -360deg;
+}
+
 /* DRAWING PATH */
 
 main article:nth-of-type(4) > div > div:nth-of-type(5) > :is(:nth-of-type(10), :nth-of-type(9), :nth-of-type(8), :nth-of-type(13), :nth-of-type(18), :nth-of-type(23)) {
@@ -484,6 +496,10 @@ body:has([value="view-180-deg-tile-5"]:checked) {
 
 body:has([value="view-270-deg-tile-5"]:checked) {
     --ry-tile-5: -270deg;
+}
+
+body:has([value="view-0-deg-tile-5"]:checked) {
+    --ry-tile-5: -360deg;
 }
 
 /* DRAWING PATH */
@@ -524,6 +540,10 @@ body:has([value="view-180-deg-tile-6"]:checked) {
 
 body:has([value="view-270-deg-tile-6"]:checked) {
     --ry-tile-6: -270deg;
+}
+
+body:has([value="view-0-deg-tile-6"]:checked) {
+    --ry-tile-6: -360deg;
 }
 
 /* DRAWING PATH */
@@ -567,6 +587,10 @@ body:has([value="view-270-deg-tile-7"]:checked) {
     --ry-tile-7: -270deg;
 }
 
+body:has([value="view-0-deg-tile-7"]:checked) {
+    --ry-tile-7: -360deg;
+}
+
 /* DRAWING PATH */
 
 main article:nth-of-type(7) > div > div:nth-of-type(5) > :is(:nth-of-type(11), :nth-of-type(12), :nth-of-type(13), :nth-of-type(8), :nth-of-type(3)) {
@@ -605,6 +629,10 @@ body:has([value="view-180-deg-tile-8"]:checked) {
 
 body:has([value="view-270-deg-tile-8"]:checked) {
     --ry-tile-8: -270deg;
+}
+
+body:has([value="view-0-deg-tile-8"]:checked) {
+    --ry-tile-8: -360deg;
 }
 
 /* DRAWING PATH */
@@ -646,6 +674,10 @@ body:has([value="view-180-deg-tile-9"]:checked) {
 
 body:has([value="view-270-deg-tile-9"]:checked) {
     --ry-tile-9: -270deg;
+}
+
+body:has([value="view-0-deg-tile-9"]:checked) {
+    --ry-tile-9: -360deg;
 }
 
 /* DRAWING PATH */
