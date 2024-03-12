@@ -22,13 +22,6 @@ body {
 /* *** */
 
 :root {
-    /* TILE PLANE SIZES */
-    --tile-width: 12em;
-    --tile-height: 1.4em;
-
-    /* GAP BETWEEN TILES */
-    --gap: 4em;
-
     /* COLORS */
     --color-1: #FEFFF0;
     --color-2: #000000;
