@@ -229,6 +229,8 @@ main article > div > div:nth-of-type(6) {
 	transform: rotateX(90deg) translateZ(calc(var(--tile-width) / 2 - var(--tile-height)));
 
     background-color: var(--color-5);
+
+    box-shadow: 4px 4px 32px 0px rgba(0, 0, 0, .8);
 }
 
 /* TILE PLANE TOP GRID FULL WIDTH AND HEIGHT + CENTER ITEMS  */
@@ -261,6 +263,8 @@ main article > div > div:nth-of-type(5) form label {
     z-index: 1001;
     
     display: none;
+
+    /* cursor: pointer; */
 }
 
 /* TILE PLANE TOP FORM INPUT */
@@ -330,7 +334,7 @@ main article:nth-of-type(1) > div > div:nth-of-type(5) > :is(:nth-of-type(11), :
 
 /* BUILDING 1 */
 
-main article > div > div:nth-of-type(5) > section:nth-of-type(1) {
+main article:nth-of-type(1) > div > div:nth-of-type(5) > section:nth-of-type(1) {
     --width-building: 1;
     --height-building: 8em;
     --depth-building: 1;
