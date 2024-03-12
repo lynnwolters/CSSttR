@@ -132,22 +132,82 @@ main article > div > div:nth-of-type(5) > div:nth-of-type(23) { grid-area: p23; 
 main article > div > div:nth-of-type(5) > div:nth-of-type(24) { grid-area: p24; }
 main article > div > div:nth-of-type(5) > div:nth-of-type(25) { grid-area: p25; }
 
-main article > div > div:nth-of-type(5) > section:nth-of-type(1) {
+/* TILE PLANE TOP SECTION TEMPLATE */
+
+main article > div > div:nth-of-type(5) > section {
     width: 100%;
     height: 100%;
 
-    grid-area: p14;
+    position: relative;
 
-    background-color: green;
+    display: grid;
+    grid-column-start: var(--col-building);
+    grid-row-start: var(--row-building);
+    grid-column-end: span var(--width-building, 1);
+    grid-row-end: span var(--depth-building, 1);
 }
 
-main article > div > div:nth-of-type(5) > section:nth-of-type(2) {
+main article > div > div:nth-of-type(5) > section:nth-of-type(1) > div {
+    position: absolute;
+}
+
+main article > div > div:nth-of-type(5) > section > div:nth-of-type(1) {
+    width: 100%;
+    height: var(--height-building);
+
+    bottom: 100%;
+    left: 0%;
+    rotate: X -90deg;
+    transform-origin: bottom;
+
+    background-color:pink;
+}
+
+main article > div > div:nth-of-type(5) > section > div:nth-of-type(3) {
+    width: 100%;
+    height: var(--height-building);
+
+    top: 100%;
+    left: 0%;
+    rotate: X 90deg;
+    transform-origin: top;
+
+    background-color:green;
+}
+
+main article > div > div:nth-of-type(5) > section > div:nth-of-type(2) {
+    width: var(--height-building);
+    height: 100%;
+
+    top: 0;
+    left: 100%;
+    rotate: Y -90deg;
+    transform-origin: left;
+
+    background-color:yellow;
+}
+
+main article > div > div:nth-of-type(5) > section > div:nth-of-type(4) {
+    width: var(--height-building);
+    height: 100%;
+
+    top: 0;
+    right: 100%;
+    rotate: Y 90deg;
+    transform-origin: right;
+
+    background-color:blue;
+}
+
+main article > div > div:nth-of-type(5) > section > div:nth-of-type(5) {
     width: 100%;
     height: 100%;
 
-    grid-area: 4 / 2 / 6 / 4;
+    top: 0;
+    left: 0;
+    translate: 0 0 var(--height-building);
 
-    background-color: blue;
+    background-color:orange;
 }
 
 /* TILE PLANE BOTTOM POSITIONING */
@@ -244,6 +304,17 @@ body:has([value="view-270-deg-tile-1"]:checked) {
 
 main article:nth-of-type(1) > div > div:nth-of-type(5) > :is(:nth-of-type(11), :nth-of-type(12), :nth-of-type(13), :nth-of-type(8), :nth-of-type(3)) {
     background-color: var(--color-1);
+}
+
+/* BUILDING 1 */
+
+main article > div > div:nth-of-type(5) > section:nth-of-type(1) {
+    --width-building: 1;
+    --height-building: 8em;
+    --depth-building: 1;
+
+    --col-building: 2;
+    --row-building: 4;
 }
 
 /* ******* */
