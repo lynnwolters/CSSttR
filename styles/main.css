@@ -27,22 +27,22 @@ main, main * {
 main > article {
     height: 0;
     --tile-width: 12em;
-    --tile-height: 1.6em;
+    --tile-height: 1.4em;
 
     grid-area: 1/1;
-    --gap: 4em;
+    --gap: 3em;
 
-    transition: 2s;
+    transition: 1s;
 }
 
 main article > div {
 	display: grid;
 
-    transition: 1s;
+    transition: .4s;
 }
 
 main > article > div:hover {
-    transform: translateY(-1em);
+    transform: translateY(-2em);
 }
 
 /* TILE PLANES STYLING + CENTER ITEMS */
@@ -258,9 +258,9 @@ main article > div > div:nth-of-type(5) form {
 main article > div > div:nth-of-type(5) form label {
     position: absolute;
     inset: 0;
+    z-index: 1001;
+    
     display: none;
-
-    cursor: pointer;
 }
 
 /* TILE PLANE TOP FORM INPUT */
