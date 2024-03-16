@@ -2,10 +2,26 @@
 /* MAIN */
 /* *** */
 
-/* MAIN */
+/* MAIN SECTION 1 */
 
-main {
-	height: 100dvh;
+main section:nth-of-type(1) {
+    height: 8em;
+
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+main section:nth-of-type(1) h2 {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: black;
+}
+
+/* MAIN SECTION 2 */
+
+main section:nth-of-type(2) {
+	height: calc(100dvh - 8em);
 
     display: grid;
     justify-content: center;
@@ -14,7 +30,7 @@ main {
 
 /* SCENE */
 
-main, main * {
+main section:nth-of-type(2), main section:nth-of-type(2) * {
 	transform-style: preserve-3d;
 }
 
@@ -24,53 +40,55 @@ main, main * {
 
 /* SET TILE PLANES BEHIND EACHOTHER */
 
-main > article {
+main section:nth-of-type(2) > article {
     height: 0;
-    --tile-width: 12em;
-    --tile-height: 1.4em;
+    --tile-width: 8em;
+    --tile-height: 1em;
 
     grid-area: 1/1;
-    --gap: 3em;
+    --gap: 1em;
 
     transition: 1s;
 }
 
-main article > div {
+main section:nth-of-type(2) article > div {
 	display: grid;
 
     transition: .4s;
 }
 
-main > article > div:hover {
-    transform: translateY(-2em);
+main section:nth-of-type(2) > article > div:hover {
+    transform: translateY(-1.4em);
 }
 
 /* TILE PLANES STYLING + CENTER ITEMS */
 
-main article > div > div {
+main section:nth-of-type(2) article > div > div {
     grid-area: 1/1;
     display: flex;
     justify-content: center;
     align-items: center; 
+
+    border: .04em solid rgba(0, 0, 0, 1);
 }
 
 /* SET TILE PLANE SIZES FOR FRONT, BACK, RIGHT AND LEFT */
 
-main article > div > div:nth-of-type(-n+4) {
+main section:nth-of-type(2) article > div > div:nth-of-type(-n+4) {
     width: var(--tile-width);
     height: var(--tile-height);
 }
 
 /* SET TILE PLANE SIZES FOR TOP AND BOTTOM */
 
-main article > div > div:nth-last-of-type(-n+2) {
+main section:nth-of-type(2) article > div > div:nth-last-of-type(-n+2) {
     width: var(--tile-width);
     aspect-ratio: 1/1;
 }
 
 /* TILE PLANE FRONT POSITIONING */
 
-main article > div > div:nth-of-type(1) {
+main section:nth-of-type(2) article > div > div:nth-of-type(1) {
 	transform: rotateY(0deg) translateZ(calc(var(--tile-width) / 2));
 
     background-color: var(--tile-light-front, var(--color-4));
@@ -78,7 +96,7 @@ main article > div > div:nth-of-type(1) {
 
 /* TILE PLANE BACK POSITIONING */
 
-main article > div > div:nth-of-type(2) {
+main section:nth-of-type(2) article > div > div:nth-of-type(2) {
 	transform: rotateY(0deg) translateZ(calc(var(--tile-width) / -2));
 
     background-color: var(--tile-light-back, var(--color-5));
@@ -86,7 +104,7 @@ main article > div > div:nth-of-type(2) {
 
 /* TILE PLANE RIGHT POSITIONING */
 
-main article > div > div:nth-of-type(3) {
+main section:nth-of-type(2) article > div > div:nth-of-type(3) {
 	transform: rotateY(90deg) translateZ(calc(var(--tile-width) / 2));
 
     background-color: var(--tile-light-right, var(--color-5));
@@ -94,7 +112,7 @@ main article > div > div:nth-of-type(3) {
 
 /* TILE PLANE LEFT POSITIONING */
 
-main article > div > div:nth-of-type(4) {
+main section:nth-of-type(2) article > div > div:nth-of-type(4) {
 	transform: rotateY(90deg) translateZ(calc(var(--tile-width) / -2));
 
     background-color: var(--tile-light-left, var(--color-5));
@@ -102,7 +120,7 @@ main article > div > div:nth-of-type(4) {
 
 /* TILE PLANE TOP POSITIONING + GRID */
 
-main article > div > div:nth-of-type(5) {
+main section:nth-of-type(2) article > div > div:nth-of-type(5) {
 	transform: rotateX(90deg) translateZ(calc(var(--tile-width) / 2));
 
     display: grid;
@@ -115,37 +133,45 @@ main article > div > div:nth-of-type(5) {
         "p21 p22 p23 p24 p25";
 
     background-color: var(--color-3);
+
+    transition: .2s;
 }
 
-main article > div > div:nth-of-type(5) > div:nth-of-type(1) { grid-area: p01; }
-main article > div > div:nth-of-type(5) > div:nth-of-type(2) { grid-area: p02; }
-main article > div > div:nth-of-type(5) > div:nth-of-type(3) { grid-area: p03; }
-main article > div > div:nth-of-type(5) > div:nth-of-type(4) { grid-area: p04; }
-main article > div > div:nth-of-type(5) > div:nth-of-type(5) { grid-area: p05; }
-main article > div > div:nth-of-type(5) > div:nth-of-type(6) { grid-area: p06; }
-main article > div > div:nth-of-type(5) > div:nth-of-type(7) { grid-area: p07; }
-main article > div > div:nth-of-type(5) > div:nth-of-type(8) { grid-area: p08; }
-main article > div > div:nth-of-type(5) > div:nth-of-type(9) { grid-area: p09; }
-main article > div > div:nth-of-type(5) > div:nth-of-type(10) { grid-area: p10; }
-main article > div > div:nth-of-type(5) > div:nth-of-type(11) { grid-area: p11; }
-main article > div > div:nth-of-type(5) > div:nth-of-type(12) { grid-area: p12; }
-main article > div > div:nth-of-type(5) > div:nth-of-type(13) { grid-area: p13; }
-main article > div > div:nth-of-type(5) > div:nth-of-type(14) { grid-area: p14; }
-main article > div > div:nth-of-type(5) > div:nth-of-type(15) { grid-area: p15; }
-main article > div > div:nth-of-type(5) > div:nth-of-type(16) { grid-area: p16; }
-main article > div > div:nth-of-type(5) > div:nth-of-type(17) { grid-area: p17; }
-main article > div > div:nth-of-type(5) > div:nth-of-type(18) { grid-area: p18; }
-main article > div > div:nth-of-type(5) > div:nth-of-type(19) { grid-area: p19; }
-main article > div > div:nth-of-type(5) > div:nth-of-type(20) { grid-area: p20; }
-main article > div > div:nth-of-type(5) > div:nth-of-type(21) { grid-area: p21; }
-main article > div > div:nth-of-type(5) > div:nth-of-type(22) { grid-area: p22; }
-main article > div > div:nth-of-type(5) > div:nth-of-type(23) { grid-area: p23; }
-main article > div > div:nth-of-type(5) > div:nth-of-type(24) { grid-area: p24; }
-main article > div > div:nth-of-type(5) > div:nth-of-type(25) { grid-area: p25; }
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > div {
+    pointer-events: none;
+
+    border: .04em solid rgba(0, 0, 0, 1);
+}
+
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > div:nth-of-type(1) { grid-area: p01; }
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > div:nth-of-type(2) { grid-area: p02; }
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > div:nth-of-type(3) { grid-area: p03; }
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > div:nth-of-type(4) { grid-area: p04; }
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > div:nth-of-type(5) { grid-area: p05; }
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > div:nth-of-type(6) { grid-area: p06; }
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > div:nth-of-type(7) { grid-area: p07; }
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > div:nth-of-type(8) { grid-area: p08; }
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > div:nth-of-type(9) { grid-area: p09; }
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > div:nth-of-type(10) { grid-area: p10; }
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > div:nth-of-type(11) { grid-area: p11; }
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > div:nth-of-type(12) { grid-area: p12; }
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > div:nth-of-type(13) { grid-area: p13; }
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > div:nth-of-type(14) { grid-area: p14; }
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > div:nth-of-type(15) { grid-area: p15; }
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > div:nth-of-type(16) { grid-area: p16; }
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > div:nth-of-type(17) { grid-area: p17; }
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > div:nth-of-type(18) { grid-area: p18; }
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > div:nth-of-type(19) { grid-area: p19; }
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > div:nth-of-type(20) { grid-area: p20; }
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > div:nth-of-type(21) { grid-area: p21; }
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > div:nth-of-type(22) { grid-area: p22; }
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > div:nth-of-type(23) { grid-area: p23; }
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > div:nth-of-type(24) { grid-area: p24; }
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > div:nth-of-type(25) { grid-area: p25; }
 
 /* TILE PLANE TOP BUILDING TEMPLATE */
 
-main article > div > div:nth-of-type(5) > section {
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > section {
     width: 100%;
     height: 100%;
 
@@ -158,13 +184,15 @@ main article > div > div:nth-of-type(5) > section {
     grid-row-end: span var(--depth-building, 1);
 }
 
-main article > div > div:nth-of-type(5) > section:nth-of-type(1) > div {
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div {
     position: absolute;
 
-    opacity: .6;
+    border: .04em solid rgba(0, 0, 0, 1);
+
+    pointer-events: none;
 }
 
-main article > div > div:nth-of-type(5) > section > div:nth-of-type(1) {
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:nth-of-type(1) {
     width: 100%;
     height: var(--height-building);
 
@@ -173,10 +201,10 @@ main article > div > div:nth-of-type(5) > section > div:nth-of-type(1) {
     rotate: X -90deg;
     transform-origin: bottom;
 
-    background-color:pink;
+    background-color: var(--background-color-building-back);
 }
 
-main article > div > div:nth-of-type(5) > section > div:nth-of-type(3) {
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:nth-of-type(3) {
     width: 100%;
     height: var(--height-building);
 
@@ -185,10 +213,10 @@ main article > div > div:nth-of-type(5) > section > div:nth-of-type(3) {
     rotate: X 90deg;
     transform-origin: top;
 
-    background-color:green;
+    background-color: var(--background-color-building-front);
 }
 
-main article > div > div:nth-of-type(5) > section > div:nth-of-type(2) {
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:nth-of-type(2) {
     width: var(--height-building);
     height: 100%;
 
@@ -197,10 +225,10 @@ main article > div > div:nth-of-type(5) > section > div:nth-of-type(2) {
     rotate: Y -90deg;
     transform-origin: left;
 
-    background-color:yellow;
+    background-color: var(--background-color-building-right);
 }
 
-main article > div > div:nth-of-type(5) > section > div:nth-of-type(4) {
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:nth-of-type(4) {
     width: var(--height-building);
     height: 100%;
 
@@ -209,10 +237,10 @@ main article > div > div:nth-of-type(5) > section > div:nth-of-type(4) {
     rotate: Y 90deg;
     transform-origin: right;
 
-    background-color:blue;
+    background-color: var(--background-color-building-left);
 }
 
-main article > div > div:nth-of-type(5) > section > div:nth-of-type(5) {
+main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:nth-of-type(5) {
     width: 100%;
     height: 100%;
 
@@ -220,22 +248,22 @@ main article > div > div:nth-of-type(5) > section > div:nth-of-type(5) {
     left: 0;
     translate: 0 0 var(--height-building);
 
-    background-color:orange;
+    background-color: var(--background-color-building-top);
 }
 
 /* TILE PLANE BOTTOM POSITIONING */
 
-main article > div > div:nth-of-type(6) {
+main section:nth-of-type(2) article > div > div:nth-of-type(6) {
 	transform: rotateX(90deg) translateZ(calc(var(--tile-width) / 2 - var(--tile-height)));
 
     background-color: var(--color-5);
 
-    box-shadow: 4px 4px 32px 0px rgba(0, 0, 0, .8);
+    /* box-shadow: 4px 4px 32px 0px rgba(0, 0, 0, .6); */
 }
 
 /* TILE PLANE TOP GRID FULL WIDTH AND HEIGHT + CENTER ITEMS  */
 
-main article > div > div:nth-of-type(5) div {
+main section:nth-of-type(2) article > div > div:nth-of-type(5) div {
     width: 100%;
     height: 100%;
 
@@ -246,41 +274,50 @@ main article > div > div:nth-of-type(5) div {
 
 /* TILE PLANE TOP FORM */
 
-main article > div > div:nth-of-type(5) form {
+main section:nth-of-type(2) article > div > div:nth-of-type(5) form {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     z-index: 1000;
+    scale: 1.3;
 }
 
 /* TILE PLANE TOP FORM LABEL */
 
-main article > div > div:nth-of-type(5) form label {
+main section:nth-of-type(2) article > div > div:nth-of-type(5) form label {
+    width: 100%;
+    height: 100%;
+
     position: absolute;
     inset: 0;
-    z-index: 1001;
     
     display: none;
-
-    /* cursor: pointer; */
 }
 
 /* TILE PLANE TOP FORM INPUT */
 
-main article > div > div:nth-of-type(5) form input {    
+main section:nth-of-type(2) article > div > div:nth-of-type(5) form input {    
+    width: 100%;
+    height: 100%;
+
     display: none;
 }
 
 /* TILE PLANE TOP FORM CHECKING IF CHECKED */
 
-main article > div > div:nth-of-type(5) form:has(> input:nth-of-type(1):checked) label:nth-of-type(2),
-main article > div > div:nth-of-type(5) form:has(> input:nth-of-type(2):checked) label:nth-of-type(3),
-main article > div > div:nth-of-type(5) form:has(> input:nth-of-type(3):checked) label:nth-of-type(4),
-main article > div > div:nth-of-type(5) form:has(> input:nth-of-type(4):checked) label:nth-of-type(5),
-main article > div > div:nth-of-type(5) form:has(> input:nth-of-type(5):checked) label:nth-of-type(1) {
+main section:nth-of-type(2) article > div > div:nth-of-type(5) form:has(> input:nth-of-type(1):checked) label:nth-of-type(2),
+main section:nth-of-type(2) article > div > div:nth-of-type(5) form:has(> input:nth-of-type(2):checked) label:nth-of-type(3),
+main section:nth-of-type(2) article > div > div:nth-of-type(5) form:has(> input:nth-of-type(3):checked) label:nth-of-type(4),
+main section:nth-of-type(2) article > div > div:nth-of-type(5) form:has(> input:nth-of-type(4):checked) label:nth-of-type(5),
+main section:nth-of-type(2) article > div > div:nth-of-type(5) form:has(> input:nth-of-type(5):checked) label:nth-of-type(1) {
+    width: 100%;
+    height: 100%;
+
 	display: block;
+
+    cursor: pointer;
 }
 
 /* ******* */
@@ -289,7 +326,7 @@ main article > div > div:nth-of-type(5) form:has(> input:nth-of-type(5):checked)
 
 /* POSITIONING */
 
-main > article:nth-of-type(1) {
+main section:nth-of-type(2) > article:nth-of-type(1) {
     transform: 
         rotateX(-30deg)
         rotateY(-45deg) 
@@ -299,7 +336,7 @@ main > article:nth-of-type(1) {
     ;
 }
 
-main > article:nth-of-type(1) {
+main section:nth-of-type(2) > article:nth-of-type(1) {
     --x-tile: calc(var(--tile-width) * -1 - var(--gap));
     --z-tile: calc(var(--tile-width) * -1 - var(--gap));
 }
@@ -328,19 +365,42 @@ body:has([value="view-0-deg-tile-1"]:checked) {
 
 /* DRAWING PATH */
 
-main article:nth-of-type(1) > div > div:nth-of-type(5) > :is(:nth-of-type(11), :nth-of-type(12), :nth-of-type(13), :nth-of-type(18), :nth-of-type(23)) {
+main section:nth-of-type(2) article:nth-of-type(1) > div > div:nth-of-type(5) > :is(:nth-of-type(11), :nth-of-type(12), :nth-of-type(13), :nth-of-type(18), :nth-of-type(23)) {
     background-color: var(--color-1);
 }
 
 /* BUILDING 1 */
 
-main article:nth-of-type(1) > div > div:nth-of-type(5) > section:nth-of-type(1) {
+main section:nth-of-type(2) article:nth-of-type(1) > div > div:nth-of-type(5) > section:nth-of-type(1) {
     --width-building: 1;
     --height-building: 8em;
     --depth-building: 1;
 
     --col-building: 2;
     --row-building: 4;
+
+    --background-color-building-back: var(--color-8);
+    --background-color-building-front: var(--color-8);
+    --background-color-building-right: var(--color-7);
+    --background-color-building-left: var(--color-8);
+    --background-color-building-top: var(--color-9);
+}
+
+/* BUILDING 2 */
+
+main section:nth-of-type(2) article:nth-of-type(1) > div > div:nth-of-type(5) > section:nth-of-type(2) {
+    --width-building: 1;
+    --height-building: 12em;
+    --depth-building: 1;
+
+    --col-building: 1;
+    --row-building: 1;
+
+    --background-color-building-back: var(--color-8);
+    --background-color-building-front: var(--color-8);
+    --background-color-building-right: var(--color-7);
+    --background-color-building-left: var(--color-8);
+    --background-color-building-top: var(--color-9);
 }
 
 /* ******* */
@@ -349,9 +409,9 @@ main article:nth-of-type(1) > div > div:nth-of-type(5) > section:nth-of-type(1) 
 
 /* POSITIONING */
 
-main > article:nth-of-type(2) {
+main section:nth-of-type(2) > article:nth-of-type(2) {
     transform: 
-        rotateX(-30deg)
+    rotateX(-30deg)
         rotateY(-45deg) 
         translateX(var(--x-tile, 0em))
         translateZ(var(--z-tile, 0em))
@@ -359,7 +419,7 @@ main > article:nth-of-type(2) {
     ;
 }
 
-main > article:nth-of-type(2) {
+main section:nth-of-type(2) > article:nth-of-type(2) {
     --z-tile: calc(var(--tile-width) * -1 - var(--gap));
 }
 
@@ -387,8 +447,59 @@ body:has([value="view-0-deg-tile-2"]:checked) {
 
 /* DRAWING PATH */
 
-main article:nth-of-type(2) > div > div:nth-of-type(5) > :is(:nth-of-type(14), :nth-of-type(12), :nth-of-type(11), :nth-of-type(13), :nth-of-type(19), :nth-of-type(24)) {
+main section:nth-of-type(2) article:nth-of-type(2) > div > div:nth-of-type(5) > :is(:nth-of-type(14), :nth-of-type(12), :nth-of-type(11), :nth-of-type(13), :nth-of-type(19), :nth-of-type(24)) {
     background-color: var(--color-1);
+}
+
+/* BUILDING 1 */
+
+main section:nth-of-type(2) article:nth-of-type(2) > div > div:nth-of-type(5) > section:nth-of-type(1) {
+    --width-building: 1;
+    --height-building: 4em;
+    --depth-building: 1;
+
+    --col-building: 3;
+    --row-building: 4;
+
+    --background-color-building-back: var(--color-8);
+    --background-color-building-front: var(--color-8);
+    --background-color-building-right: var(--color-7);
+    --background-color-building-left: var(--color-8);
+    --background-color-building-top: var(--color-9);
+}
+
+/* BUILDING 2 */
+
+main section:nth-of-type(2) article:nth-of-type(2) > div > div:nth-of-type(5) > section:nth-of-type(2) {
+    --width-building: 1;
+    --height-building: 10em;
+    --depth-building: 1;
+
+    --col-building: 4;
+    --row-building: 2;
+
+    --background-color-building-back: var(--color-8);
+    --background-color-building-front: var(--color-8);
+    --background-color-building-right: var(--color-7);
+    --background-color-building-left: var(--color-8);
+    --background-color-building-top: var(--color-9);
+}
+
+/* BUILDING 3 */
+
+main section:nth-of-type(2) article:nth-of-type(2) > div > div:nth-of-type(5) > section:nth-of-type(3) {
+    --width-building: 1;
+    --height-building: 8em;
+    --depth-building: 1;
+
+    --col-building: 2;
+    --row-building: 5;
+
+    --background-color-building-back: var(--color-8);
+    --background-color-building-front: var(--color-8);
+    --background-color-building-right: var(--color-7);
+    --background-color-building-left: var(--color-8);
+    --background-color-building-top: var(--color-9);
 }
 
 /* ******* */
@@ -397,7 +508,7 @@ main article:nth-of-type(2) > div > div:nth-of-type(5) > :is(:nth-of-type(14), :
 
 /* POSITIONING */
 
-main > article:nth-of-type(3) {
+main section:nth-of-type(2) > article:nth-of-type(3) {
     transform: 
         rotateX(-30deg)
         rotateY(-45deg) 
@@ -407,7 +518,7 @@ main > article:nth-of-type(3) {
     ;
 }
 
-main > article:nth-of-type(3) {
+main section:nth-of-type(2) > article:nth-of-type(3) {
     --x-tile: calc(var(--tile-width) * 1 + var(--gap));
     --z-tile: calc(var(--tile-width) * -1 - var(--gap));
 }
@@ -440,13 +551,47 @@ main article:nth-of-type(3) > div > div:nth-of-type(5) > :is(:nth-of-type(11), :
     background-color: var(--color-1);
 }
 
+/* BUILDING 1 */
+
+main section:nth-of-type(2) article:nth-of-type(3) > div > div:nth-of-type(5) > section:nth-of-type(1) {
+    --width-building: 1;
+    --height-building: 6em;
+    --depth-building: 1;
+
+    --col-building: 3;
+    --row-building: 3;
+
+    --background-color-building-back: var(--color-8);
+    --background-color-building-front: var(--color-8);
+    --background-color-building-right: var(--color-7);
+    --background-color-building-left: var(--color-8);
+    --background-color-building-top: var(--color-9);
+}
+
+/* BUILDING 2 */
+
+main section:nth-of-type(2) article:nth-of-type(3) > div > div:nth-of-type(5) > section:nth-of-type(2) {
+    --width-building: 1;
+    --height-building: 8em;
+    --depth-building: 1;
+
+    --col-building: 1;
+    --row-building: 2;
+
+    --background-color-building-back: var(--color-8);
+    --background-color-building-front: var(--color-8);
+    --background-color-building-right: var(--color-7);
+    --background-color-building-left: var(--color-8);
+    --background-color-building-top: var(--color-9);
+}
+
 /* ******* */
 /* TILE 4 */
 /* ***** */
 
 /* POSITIONING */
 
-main > article:nth-of-type(4) {
+main section:nth-of-type(2) > article:nth-of-type(4) {
     transform: 
         rotateX(-30deg)
         rotateY(-45deg) 
@@ -456,7 +601,7 @@ main > article:nth-of-type(4) {
     ;
 }
 
-main > article:nth-of-type(4) {
+main section:nth-of-type(2) > article:nth-of-type(4) {
     --x-tile: calc(var(--tile-width) * -1 - var(--gap));
 }
 
@@ -484,8 +629,76 @@ body:has([value="view-0-deg-tile-4"]:checked) {
 
 /* DRAWING PATH */
 
-main article:nth-of-type(4) > div > div:nth-of-type(5) > :is(:nth-of-type(11), :nth-of-type(12), :nth-of-type(13), :nth-of-type(14), :nth-of-type(19), :nth-of-type(24)) {
+main section:nth-of-type(2) article:nth-of-type(4) > div > div:nth-of-type(5) > :is(:nth-of-type(11), :nth-of-type(12), :nth-of-type(13), :nth-of-type(14), :nth-of-type(19), :nth-of-type(24)) {
     background-color: var(--color-1);
+}
+
+/* BUILDING 1 */
+
+main section:nth-of-type(2) article:nth-of-type(4) > div > div:nth-of-type(5) > section:nth-of-type(1) {
+    --width-building: 1;
+    --height-building: 12em;
+    --depth-building: 1;
+
+    --col-building: 5;
+    --row-building: 3;
+
+    --background-color-building-back: var(--color-8);
+    --background-color-building-front: var(--color-8);
+    --background-color-building-right: var(--color-7);
+    --background-color-building-left: var(--color-8);
+    --background-color-building-top: var(--color-9);
+}
+
+/* BUILDING 2 */
+
+main section:nth-of-type(2) article:nth-of-type(4) > div > div:nth-of-type(5) > section:nth-of-type(2) {
+    --width-building: 1;
+    --height-building: 5em;
+    --depth-building: 1;
+
+    --col-building: 3;
+    --row-building: 5;
+
+    --background-color-building-back: var(--color-8);
+    --background-color-building-front: var(--color-8);
+    --background-color-building-right: var(--color-7);
+    --background-color-building-left: var(--color-8);
+    --background-color-building-top: var(--color-9);
+}
+
+/* BUILDING 3 */
+
+main section:nth-of-type(2) article:nth-of-type(4) > div > div:nth-of-type(5) > section:nth-of-type(3) {
+    --width-building: 1;
+    --height-building: 7em;
+    --depth-building: 1;
+
+    --col-building: 2;
+    --row-building: 1;
+
+    --background-color-building-back: var(--color-8);
+    --background-color-building-front: var(--color-8);
+    --background-color-building-right: var(--color-7);
+    --background-color-building-left: var(--color-8);
+    --background-color-building-top: var(--color-9);
+}
+
+/* BUILDING 4 */
+
+main section:nth-of-type(2) article:nth-of-type(4) > div > div:nth-of-type(5) > section:nth-of-type(4) {
+    --width-building: 1;
+    --height-building: 9em;
+    --depth-building: 1;
+
+    --col-building: 4;
+    --row-building: 1;
+
+    --background-color-building-back: var(--color-8);
+    --background-color-building-front: var(--color-8);
+    --background-color-building-right: var(--color-7);
+    --background-color-building-left: var(--color-8);
+    --background-color-building-top: var(--color-9);
 }
 
 /* ******* */
@@ -494,7 +707,7 @@ main article:nth-of-type(4) > div > div:nth-of-type(5) > :is(:nth-of-type(11), :
 
 /* POSITIONING */
 
-main > article:nth-of-type(5) {
+main section:nth-of-type(2) > article:nth-of-type(5) {
     transform: 
         rotateX(-30deg)
         rotateY(-45deg) 
@@ -528,8 +741,42 @@ body:has([value="view-0-deg-tile-5"]:checked) {
 
 /* DRAWING PATH */
 
-main article:nth-of-type(5) > div > div:nth-of-type(5) > :is(:nth-of-type(6), :nth-of-type(7), :nth-of-type(2), :nth-of-type(23), :nth-of-type(18), :nth-of-type(19), :nth-of-type(20)) {
+main section:nth-of-type(2) article:nth-of-type(5) > div > div:nth-of-type(5) > :is(:nth-of-type(6), :nth-of-type(7), :nth-of-type(2), :nth-of-type(23), :nth-of-type(18), :nth-of-type(19), :nth-of-type(20)) {
     background-color: var(--color-1);
+}
+
+/* BUILDING 1 */
+
+main section:nth-of-type(2) article:nth-of-type(5) > div > div:nth-of-type(5) > section:nth-of-type(1) {
+    --width-building: 1;
+    --height-building: 5em;
+    --depth-building: 1;
+
+    --col-building: 3;
+    --row-building: 1;
+
+    --background-color-building-back: var(--color-8);
+    --background-color-building-front: var(--color-8);
+    --background-color-building-right: var(--color-7);
+    --background-color-building-left: var(--color-8);
+    --background-color-building-top: var(--color-9);
+}
+
+/* BUILDING 2 */
+
+main section:nth-of-type(2) article:nth-of-type(5) > div > div:nth-of-type(5) > section:nth-of-type(2) {
+    --width-building: 1;
+    --height-building: 7em;
+    --depth-building: 1;
+
+    --col-building: 2;
+    --row-building: 3;
+
+    --background-color-building-back: var(--color-8);
+    --background-color-building-front: var(--color-8);
+    --background-color-building-right: var(--color-7);
+    --background-color-building-left: var(--color-8);
+    --background-color-building-top: var(--color-9);
 }
 
 /* ******* */
@@ -538,7 +785,7 @@ main article:nth-of-type(5) > div > div:nth-of-type(5) > :is(:nth-of-type(6), :n
 
 /* POSITIONING */
 
-main > article:nth-of-type(6) {
+main section:nth-of-type(2) > article:nth-of-type(6) {
     transform: 
         rotateX(-30deg)
         rotateY(-45deg) 
@@ -548,7 +795,7 @@ main > article:nth-of-type(6) {
     ;
 }
 
-main > article:nth-of-type(6) {
+main section:nth-of-type(2) > article:nth-of-type(6) {
     --x-tile: calc(var(--tile-width) * 1 + var(--gap));
 }
 
@@ -576,8 +823,59 @@ body:has([value="view-0-deg-tile-6"]:checked) {
 
 /* DRAWING PATH */
 
-main article:nth-of-type(6) > div > div:nth-of-type(5) > :is(:nth-of-type(6), :nth-of-type(7), :nth-of-type(8), :nth-of-type(13), :nth-of-type(14), :nth-of-type(15),) {
+main section:nth-of-type(2) article:nth-of-type(6) > div > div:nth-of-type(5) > :is(:nth-of-type(6), :nth-of-type(7), :nth-of-type(8), :nth-of-type(13), :nth-of-type(14), :nth-of-type(15),) {
     background-color: var(--color-1);
+}
+
+/* BUILDING 1 */
+
+main section:nth-of-type(2) article:nth-of-type(6) > div > div:nth-of-type(5) > section:nth-of-type(1) {
+    --width-building: 1;
+    --height-building: 10em;
+    --depth-building: 1;
+
+    --col-building: 3;
+    --row-building: 1;
+
+    --background-color-building-back: var(--color-8);
+    --background-color-building-front: var(--color-8);
+    --background-color-building-right: var(--color-7);
+    --background-color-building-left: var(--color-8);
+    --background-color-building-top: var(--color-9);
+}
+
+/* BUILDING 2 */
+
+main section:nth-of-type(2) article:nth-of-type(6) > div > div:nth-of-type(5) > section:nth-of-type(2) {
+    --width-building: 1;
+    --height-building: 6em;
+    --depth-building: 1;
+
+    --col-building: 1;
+    --row-building: 4;
+
+    --background-color-building-back: var(--color-8);
+    --background-color-building-front: var(--color-8);
+    --background-color-building-right: var(--color-7);
+    --background-color-building-left: var(--color-8);
+    --background-color-building-top: var(--color-9);
+}
+
+/* BUILDING 3 */
+
+main section:nth-of-type(2) article:nth-of-type(6) > div > div:nth-of-type(5) > section:nth-of-type(3) {
+    --width-building: 1;
+    --height-building: 12em;
+    --depth-building: 1;
+
+    --col-building: 4;
+    --row-building: 5;
+
+    --background-color-building-back: var(--color-8);
+    --background-color-building-front: var(--color-8);
+    --background-color-building-right: var(--color-7);
+    --background-color-building-left: var(--color-8);
+    --background-color-building-top: var(--color-9);
 }
 
 /* ******* */
@@ -586,7 +884,7 @@ main article:nth-of-type(6) > div > div:nth-of-type(5) > :is(:nth-of-type(6), :n
 
 /* POSITIONING */
 
-main > article:nth-of-type(7) {
+main section:nth-of-type(2) > article:nth-of-type(7) {
     transform: 
         rotateX(-30deg)
         rotateY(-45deg) 
@@ -596,7 +894,7 @@ main > article:nth-of-type(7) {
     ;
 }
 
-main > article:nth-of-type(7) {
+main section:nth-of-type(2) > article:nth-of-type(7) {
     --x-tile: calc(var(--tile-width) * -1 - var(--gap));
     --z-tile: calc(var(--tile-width) * 1 + var(--gap));
 }
@@ -625,8 +923,42 @@ body:has([value="view-0-deg-tile-7"]:checked) {
 
 /* DRAWING PATH */
 
-main article:nth-of-type(7) > div > div:nth-of-type(5) > :is(:nth-of-type(11), :nth-of-type(12), :nth-of-type(13), :nth-of-type(18), :nth-of-type(23)) {
+main section:nth-of-type(2) article:nth-of-type(7) > div > div:nth-of-type(5) > :is(:nth-of-type(11), :nth-of-type(12), :nth-of-type(13), :nth-of-type(18), :nth-of-type(23)) {
     background-color: var(--color-1);
+}
+
+/* BUILDING 1 */
+
+main section:nth-of-type(2) article:nth-of-type(7) > div > div:nth-of-type(5) > section:nth-of-type(1) {
+    --width-building: 1;
+    --height-building: 12em;
+    --depth-building: 1;
+
+    --col-building: 2;
+    --row-building: 4;
+
+    --background-color-building-back: var(--color-8);
+    --background-color-building-front: var(--color-8);
+    --background-color-building-right: var(--color-7);
+    --background-color-building-left: var(--color-8);
+    --background-color-building-top: var(--color-9);
+}
+
+/* BUILDING 2 */
+
+main section:nth-of-type(2) article:nth-of-type(7) > div > div:nth-of-type(5) > section:nth-of-type(2) {
+    --width-building: 1;
+    --height-building: 9em;
+    --depth-building: 1;
+
+    --col-building: 3;
+    --row-building: 1;
+
+    --background-color-building-back: var(--color-8);
+    --background-color-building-front: var(--color-8);
+    --background-color-building-right: var(--color-7);
+    --background-color-building-left: var(--color-8);
+    --background-color-building-top: var(--color-9);
 }
 
 /* ******* */
@@ -635,7 +967,7 @@ main article:nth-of-type(7) > div > div:nth-of-type(5) > :is(:nth-of-type(11), :
 
 /* POSITIONING */
 
-main > article:nth-of-type(8) {
+main section:nth-of-type(2) > article:nth-of-type(8) {
     transform: 
         rotateX(-30deg)
         rotateY(-45deg) 
@@ -645,7 +977,7 @@ main > article:nth-of-type(8) {
     ;
 }
 
-main > article:nth-of-type(8) {
+main section:nth-of-type(2) > article:nth-of-type(8) {
     --z-tile: calc(var(--tile-width) * 1 + var(--gap));
 }
 
@@ -673,8 +1005,25 @@ body:has([value="view-0-deg-tile-8"]:checked) {
 
 /* DRAWING PATH */
 
-main article:nth-of-type(8) > div > div:nth-of-type(5) > :is(:nth-of-type(6), :nth-of-type(7), :nth-of-type(12), :nth-of-type(17), :nth-of-type(18), :nth-of-type(19), :nth-of-type(14), :nth-of-type(9), :nth-of-type(4)) {
+main section:nth-of-type(2) article:nth-of-type(8) > div > div:nth-of-type(5) > :is(:nth-of-type(6), :nth-of-type(7), :nth-of-type(12), :nth-of-type(17), :nth-of-type(18), :nth-of-type(19), :nth-of-type(14), :nth-of-type(9), :nth-of-type(4)) {
     background-color: var(--color-1);
+}
+
+/* BUILDING 1 */
+
+main section:nth-of-type(2) article:nth-of-type(8) > div > div:nth-of-type(5) > section:nth-of-type(1) {
+    --width-building: 1;
+    --height-building: 7em;
+    --depth-building: 1;
+
+    --col-building: 3;
+    --row-building: 1;
+
+    --background-color-building-back: var(--color-8);
+    --background-color-building-front: var(--color-8);
+    --background-color-building-right: var(--color-7);
+    --background-color-building-left: var(--color-8);
+    --background-color-building-top: var(--color-9);
 }
 
 /* ******* */
@@ -683,7 +1032,7 @@ main article:nth-of-type(8) > div > div:nth-of-type(5) > :is(:nth-of-type(6), :n
 
 /* POSITIONING */
 
-main > article:nth-of-type(9) {
+main section:nth-of-type(2) > article:nth-of-type(9) {
     transform: 
         rotateX(-30deg)
         rotateY(-45deg) 
@@ -693,7 +1042,7 @@ main > article:nth-of-type(9) {
     ;
 }
 
-main > article:nth-of-type(9) {
+main section:nth-of-type(2) > article:nth-of-type(9) {
     --x-tile: calc(var(--tile-width) * 1 + var(--gap));
     --z-tile: calc(var(--tile-width) * 1 + var(--gap));
 }
@@ -722,6 +1071,57 @@ body:has([value="view-0-deg-tile-9"]:checked) {
 
 /* DRAWING PATH */
 
-main article:nth-of-type(9) > div > div:nth-of-type(5) > :is(:nth-of-type(6), :nth-of-type(7), :nth-of-type(8), :nth-of-type(9), :nth-of-type(10)) {
+main section:nth-of-type(2) article:nth-of-type(9) > div > div:nth-of-type(5) > :is(:nth-of-type(6), :nth-of-type(7), :nth-of-type(8), :nth-of-type(9), :nth-of-type(10)) {
     background-color: var(--color-1);
+}
+
+/* BUILDING 1 */
+
+main section:nth-of-type(2) article:nth-of-type(9) > div > div:nth-of-type(5) > section:nth-of-type(1) {
+    --width-building: 1;
+    --height-building: 4em;
+    --depth-building: 1;
+
+    --col-building: 2;
+    --row-building: 3;
+
+    --background-color-building-back: var(--color-8);
+    --background-color-building-front: var(--color-8);
+    --background-color-building-right: var(--color-7);
+    --background-color-building-left: var(--color-8);
+    --background-color-building-top: var(--color-9);
+}
+
+/* BUILDING 2 */
+
+main section:nth-of-type(2) article:nth-of-type(9) > div > div:nth-of-type(5) > section:nth-of-type(2) {
+    --width-building: 1;
+    --height-building: 6em;
+    --depth-building: 1;
+
+    --col-building: 3;
+    --row-building: 1;
+
+    --background-color-building-back: var(--color-8);
+    --background-color-building-front: var(--color-8);
+    --background-color-building-right: var(--color-7);
+    --background-color-building-left: var(--color-8);
+    --background-color-building-top: var(--color-9);
+}
+
+/* BUILDING 3 */
+
+main section:nth-of-type(2) article:nth-of-type(9) > div > div:nth-of-type(5) > section:nth-of-type(3) {
+    --width-building: 1;
+    --height-building: 10em;
+    --depth-building: 1;
+
+    --col-building: 4;
+    --row-building: 4;
+
+    --background-color-building-back: var(--color-8);
+    --background-color-building-front: var(--color-8);
+    --background-color-building-right: var(--color-7);
+    --background-color-building-left: var(--color-8);
+    --background-color-building-top: var(--color-9);
 }

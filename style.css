@@ -9,11 +9,9 @@
 }
 
 body {
-    background: radial-gradient(#F9FEFF, #D6F1FA);
+    background: radial-gradient(white, white);
 
     font-family: 'Urbanist', sans-serif;
-    font-weight: bold;
-    font-size: .8em;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -23,9 +21,12 @@ body {
 
 :root {
     /* COLORS */
-    --color-1: #FEFFF0;
-    --color-2: #000000;
-    --color-3: #c9ea71;
-    --color-4: #7C6959;
-    --color-5: #4B423B;
+    --color-1: black;
+    --color-2: #ffffff;
+    --color-3: #ffffff;
+    --color-4: #ffffff;
+    --color-5: #ffffff;
+    --color-7: #ffffff;
+    --color-8: #ffffff;
+    --color-9: #ffffff;
 }
