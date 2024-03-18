@@ -370,7 +370,7 @@ main section:nth-of-type(2) article:nth-of-type(1) > div > div:nth-of-type(5) > 
 
 main section:nth-of-type(2) article:nth-of-type(1) > div > div:nth-of-type(5) > section:nth-of-type(1) {
     --width-building: 1;
-    --height-building: 2em;
+    --height-building: 6em;
     --depth-building: 1;
 
     --col-building: 2;
@@ -447,7 +447,7 @@ main section:nth-of-type(2) article:nth-of-type(2) > div > div:nth-of-type(5) > 
 
 main section:nth-of-type(2) article:nth-of-type(2) > div > div:nth-of-type(5) > section:nth-of-type(2) {
     --width-building: 1;
-    --height-building: 2em;
+    --height-building: 4em;
     --depth-building: 1;
 
     --col-building: 4;
@@ -458,7 +458,7 @@ main section:nth-of-type(2) article:nth-of-type(2) > div > div:nth-of-type(5) > 
 
 main section:nth-of-type(2) article:nth-of-type(2) > div > div:nth-of-type(5) > section:nth-of-type(3) {
     --width-building: 1;
-    --height-building: 2em;
+    --height-building: 6em;
     --depth-building: 1;
 
     --col-building: 2;
@@ -525,7 +525,7 @@ main section:nth-of-type(2) article:nth-of-type(3) > div > div:nth-of-type(5) > 
 
 main section:nth-of-type(2) article:nth-of-type(3) > div > div:nth-of-type(5) > section:nth-of-type(2) {
     --width-building: 1;
-    --height-building: 2em;
+    --height-building: 4em;
     --depth-building: 1;
 
     --col-building: 1;
@@ -580,7 +580,7 @@ main section:nth-of-type(2) article:nth-of-type(4) > div > div:nth-of-type(5) > 
 
 main section:nth-of-type(2) article:nth-of-type(4) > div > div:nth-of-type(5) > section:nth-of-type(1) {
     --width-building: 1;
-    --height-building: 2em;
+    --height-building: 6em;
     --depth-building: 1;
 
     --col-building: 3;
@@ -591,7 +591,7 @@ main section:nth-of-type(2) article:nth-of-type(4) > div > div:nth-of-type(5) > 
 
 main section:nth-of-type(2) article:nth-of-type(4) > div > div:nth-of-type(5) > section:nth-of-type(2) {
     --width-building: 1;
-    --height-building: 2em;
+    --height-building: 4em;
     --depth-building: 1;
 
     --col-building: 2;
@@ -653,7 +653,7 @@ main section:nth-of-type(2) article:nth-of-type(5) > div > div:nth-of-type(5) > 
 
 main section:nth-of-type(2) article:nth-of-type(5) > div > div:nth-of-type(5) > section:nth-of-type(1) {
     --width-building: 1;
-    --height-building: 2em;
+    --height-building: 4em;
     --depth-building: 1;
 
     --col-building: 3;
@@ -719,7 +719,7 @@ main section:nth-of-type(2) article:nth-of-type(6) > div > div:nth-of-type(5) > 
 
 main section:nth-of-type(2) article:nth-of-type(6) > div > div:nth-of-type(5) > section:nth-of-type(1) {
     --width-building: 1;
-    --height-building: 2em;
+    --height-building: 4em;
     --depth-building: 1;
 
     --col-building: 3;
@@ -803,7 +803,7 @@ main section:nth-of-type(2) article:nth-of-type(7) > div > div:nth-of-type(5) > 
 
 main section:nth-of-type(2) article:nth-of-type(7) > div > div:nth-of-type(5) > section:nth-of-type(1) {
     --width-building: 1;
-    --height-building: 2em;
+    --height-building: 6em;
     --depth-building: 1;
 
     --col-building: 2;
@@ -814,7 +814,7 @@ main section:nth-of-type(2) article:nth-of-type(7) > div > div:nth-of-type(5) > 
 
 main section:nth-of-type(2) article:nth-of-type(7) > div > div:nth-of-type(5) > section:nth-of-type(2) {
     --width-building: 1;
-    --height-building: 2em;
+    --height-building: 4em;
     --depth-building: 1;
 
     --col-building: 3;
@@ -874,6 +874,17 @@ main section:nth-of-type(2) article:nth-of-type(8) > div > div:nth-of-type(5) > 
 
     --col-building: 3;
     --row-building: 1;
+}
+
+/* BUILDING 2 */
+
+main section:nth-of-type(2) article:nth-of-type(8) > div > div:nth-of-type(5) > section:nth-of-type(2) {
+    --width-building: 1;
+    --height-building: 4em;
+    --depth-building: 1;
+
+    --col-building: 2;
+    --row-building: 5;
 }
 
 /* ******* */
@@ -936,7 +947,7 @@ main section:nth-of-type(2) article:nth-of-type(9) > div > div:nth-of-type(5) > 
 
 main section:nth-of-type(2) article:nth-of-type(9) > div > div:nth-of-type(5) > section:nth-of-type(2) {
     --width-building: 1;
-    --height-building: 2em;
+    --height-building: 6em;
     --depth-building: 1;
 
     --col-building: 3;
@@ -947,7 +958,7 @@ main section:nth-of-type(2) article:nth-of-type(9) > div > div:nth-of-type(5) > 
 
 main section:nth-of-type(2) article:nth-of-type(9) > div > div:nth-of-type(5) > section:nth-of-type(3) {
     --width-building: 1;
-    --height-building: 2em;
+    --height-building: 4em;
     --depth-building: 1;
 
     --col-building: 4;
