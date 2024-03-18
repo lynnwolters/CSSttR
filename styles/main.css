@@ -2,12 +2,10 @@
 /* MAIN */
 /* *** */
 
-/* MAIN */
-
 /* MAIN SECTION 1 */
 
 main > section:nth-of-type(1) {
-    height: 8em;
+    height: 15dvh;
 
     display: flex;
     justify-content: center;
@@ -25,7 +23,7 @@ main > section:nth-of-type(1) h2 {
 /* MAIN SECTION 2 */
 
 main section:nth-of-type(2) {
-	height: calc(100dvh - 8em);
+	height: 75dvh;
 
     display: grid;
     justify-content: center;
@@ -260,7 +258,8 @@ main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:n
 main section:nth-of-type(2) article > div > div:nth-of-type(6) {
 	transform: rotateX(90deg) translateZ(calc(var(--tile-width) / 2 - var(--tile-height)));
 
-    background-color: var(--color-5);
+    background-color: var(--building-planes-color);
+    box-shadow: var(--box-shadow);
 }
 
 /* TILE PLANE TOP GRID FULL WIDTH AND HEIGHT + CENTER ITEMS  */
