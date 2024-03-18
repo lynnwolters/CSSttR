@@ -9,6 +9,29 @@
 }
 
 body {
+    background-color: var(--background-color);
+
     font-family: "Afacad", sans-serif;
     -webkit-font-smoothing: antialiased;
+}
+
+:root {
+    /* COLORS */
+    --road-color: #f495e9;
+
+    --tile-plane-top-color: #e94242;
+    --tile-plane-front-color: #4b2626;
+    --tile-planes-color: #c6da76;
+
+    --building-plane-top-color: #FFFFFF;
+    --building-plane-front-color: #ab4c4c;
+    --building-planes-color: #000000;
+
+    --background-color: #FFFFFF;
+
+    --title-color: #000000;
+    --explanation-color: #000000;
+
+    /* BORDERS */
+    --border: .04em solid rgba(0, 0, 0, .6);
 }

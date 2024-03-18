@@ -19,7 +19,7 @@ main > section:nth-of-type(1) h2 {
     font-weight: 500;
     text-align: center;
     line-height: 130%;
-    color: black;
+    color: var(--explanation-color);
 }
 
 /* MAIN SECTION 2 */
@@ -30,61 +30,6 @@ main section:nth-of-type(2) {
     display: grid;
     justify-content: center;
     align-items: center;
-}
-
-/*  MAIN SECTION 2 SUN */
-
-main > section:nth-of-type(3) {
-    width: 100%;
-    height: 100%;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background: radial-gradient(rgb(255, 255, 255), rgb(197, 220, 255));
-}
-
-main > section:nth-of-type(3) article {
-    width: 48em;
-    aspect-ratio: 1/1;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: red;
-}
-
-main > section:nth-of-type(3) article * {
-    aspect-ratio: 1/1;
-
-    position: absolute;
-
-    background-color: white;
-
-    border-radius: 100%;
-}
-
-main > section:nth-of-type(3) article div:nth-of-type(1) {
-    opacity: .2;
-}
-
-main > section:nth-of-type(3) article div:nth-of-type(2) {
-    opacity: .4;
-}
-
-main > section:nth-of-type(3) article div:nth-of-type(3) {
-    opacity: .6;
-}
-
-main > section:nth-of-type(3) article div:nth-of-type(4) {
-    opacity: .8;
 }
 
 /* SCENE */
@@ -128,7 +73,7 @@ main section:nth-of-type(2) article > div > div {
     justify-content: center;
     align-items: center; 
 
-    /* border: .04em solid rgba(0, 0, 0, 1); */
+    border: var(--border);
 }
 
 /* SET TILE PLANE SIZES FOR FRONT, BACK, RIGHT AND LEFT */
@@ -150,7 +95,7 @@ main section:nth-of-type(2) article > div > div:nth-last-of-type(-n+2) {
 main section:nth-of-type(2) article > div > div:nth-of-type(1) {
 	transform: rotateY(0deg) translateZ(calc(var(--tile-width) / 2));
 
-    background-color: #80604c;
+    background-color: var(--tile-plane-front-color);
 }
 
 /* TILE PLANE BACK POSITIONING */
@@ -158,7 +103,7 @@ main section:nth-of-type(2) article > div > div:nth-of-type(1) {
 main section:nth-of-type(2) article > div > div:nth-of-type(2) {
 	transform: rotateY(0deg) translateZ(calc(var(--tile-width) / -2));
 
-    background-color: #3c2f1a;
+    background-color: var(--tile-planes-color);
 }
 
 /* TILE PLANE RIGHT POSITIONING */
@@ -166,7 +111,7 @@ main section:nth-of-type(2) article > div > div:nth-of-type(2) {
 main section:nth-of-type(2) article > div > div:nth-of-type(3) {
 	transform: rotateY(90deg) translateZ(calc(var(--tile-width) / 2));
 
-    background-color: #3c2f1a;
+    background-color: var(--tile-planes-color);
 }
 
 /* TILE PLANE LEFT POSITIONING */
@@ -174,7 +119,7 @@ main section:nth-of-type(2) article > div > div:nth-of-type(3) {
 main section:nth-of-type(2) article > div > div:nth-of-type(4) {
 	transform: rotateY(90deg) translateZ(calc(var(--tile-width) / -2));
 
-    background-color: #3c2f1a;
+    background-color: var(--tile-planes-color);
 }
 
 /* TILE PLANE TOP POSITIONING + GRID */
@@ -191,7 +136,7 @@ main section:nth-of-type(2) article > div > div:nth-of-type(5) {
         "p16 p17 p18 p19 p20"
         "p21 p22 p23 p24 p25";
 
-    background-color: #d8dc67;
+    background-color: var(--tile-plane-top-color);
 
     transition: .2s;
 }
@@ -199,7 +144,7 @@ main section:nth-of-type(2) article > div > div:nth-of-type(5) {
 main section:nth-of-type(2) article > div > div:nth-of-type(5) > div {
     pointer-events: none;
 
-    /* border: .04em solid rgba(0, 0, 0, 1); */
+    border: var(--border);
 }
 
 main section:nth-of-type(2) article > div > div:nth-of-type(5) > div:nth-of-type(1) { grid-area: p01; }
@@ -246,7 +191,7 @@ main section:nth-of-type(2) article > div > div:nth-of-type(5) > section {
 main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div {
     position: absolute;
 
-    opacity: 0;
+    border: var(--border);
 
     pointer-events: none;
 }
@@ -260,7 +205,7 @@ main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:n
     rotate: X -90deg;
     transform-origin: bottom;
 
-    background-color: #ffffff;
+    background-color: var(--building-planes-color);
 }
 
 main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:nth-of-type(3) {
@@ -272,7 +217,7 @@ main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:n
     rotate: X 90deg;
     transform-origin: top;
 
-    background-color: #ffffff;
+    background-color: var(--building-plane-front-color);
 }
 
 main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:nth-of-type(2) {
@@ -284,7 +229,7 @@ main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:n
     rotate: Y -90deg;
     transform-origin: left;
 
-    background-color: #ffffff;
+    background-color: var(--building-planes-color);
 }
 
 main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:nth-of-type(4) {
@@ -296,7 +241,7 @@ main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:n
     rotate: Y 90deg;
     transform-origin: right;
 
-    background-color: #ffffff;
+    background-color: var(--building-planes-color);
 }
 
 main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:nth-of-type(5) {
@@ -307,7 +252,7 @@ main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:n
     left: 0;
     translate: 0 0 var(--height-building);
 
-    background-color: #ffffff;
+    background-color: var(--building-plane-top-color);
 }
 
 /* TILE PLANE BOTTOM POSITIONING */
@@ -316,8 +261,6 @@ main section:nth-of-type(2) article > div > div:nth-of-type(6) {
 	transform: rotateX(90deg) translateZ(calc(var(--tile-width) / 2 - var(--tile-height)));
 
     background-color: var(--color-5);
-
-    box-shadow: 4px 4px 32px 0px rgba(0, 0, 0, .6);
 }
 
 /* TILE PLANE TOP GRID FULL WIDTH AND HEIGHT + CENTER ITEMS  */
@@ -421,14 +364,14 @@ body:has([value="view-0-deg-tile-1"]:checked) {
 /* DRAWING PATH */
 
 main section:nth-of-type(2) article:nth-of-type(1) > div > div:nth-of-type(5) > :is(:nth-of-type(11), :nth-of-type(12), :nth-of-type(13), :nth-of-type(18), :nth-of-type(23)) {
-    background-color: #3c2f1a;
+    background-color: var(--road-color);
 }
 
 /* BUILDING 1 */
 
 main section:nth-of-type(2) article:nth-of-type(1) > div > div:nth-of-type(5) > section:nth-of-type(1) {
     --width-building: 1;
-    --height-building: 8em;
+    --height-building: 2em;
     --depth-building: 1;
 
     --col-building: 2;
@@ -439,7 +382,7 @@ main section:nth-of-type(2) article:nth-of-type(1) > div > div:nth-of-type(5) > 
 
 main section:nth-of-type(2) article:nth-of-type(1) > div > div:nth-of-type(5) > section:nth-of-type(2) {
     --width-building: 1;
-    --height-building: 12em;
+    --height-building: 2em;
     --depth-building: 1;
 
     --col-building: 1;
@@ -487,17 +430,17 @@ body:has([value="view-0-deg-tile-2"]:checked) {
 /* DRAWING PATH */
 
 main section:nth-of-type(2) article:nth-of-type(2) > div > div:nth-of-type(5) > :is(:nth-of-type(14), :nth-of-type(12), :nth-of-type(11), :nth-of-type(13), :nth-of-type(19), :nth-of-type(24)) {
-    background-color: #3c2f1a;
+    background-color: var(--road-color);
 }
 
 /* BUILDING 1 */
 
 main section:nth-of-type(2) article:nth-of-type(2) > div > div:nth-of-type(5) > section:nth-of-type(1) {
     --width-building: 1;
-    --height-building: 4em;
+    --height-building: 2em;
     --depth-building: 1;
 
-    --col-building: 3;
+    --col-building: 5;
     --row-building: 4;
 }
 
@@ -505,7 +448,7 @@ main section:nth-of-type(2) article:nth-of-type(2) > div > div:nth-of-type(5) > 
 
 main section:nth-of-type(2) article:nth-of-type(2) > div > div:nth-of-type(5) > section:nth-of-type(2) {
     --width-building: 1;
-    --height-building: 10em;
+    --height-building: 2em;
     --depth-building: 1;
 
     --col-building: 4;
@@ -516,7 +459,7 @@ main section:nth-of-type(2) article:nth-of-type(2) > div > div:nth-of-type(5) > 
 
 main section:nth-of-type(2) article:nth-of-type(2) > div > div:nth-of-type(5) > section:nth-of-type(3) {
     --width-building: 1;
-    --height-building: 8em;
+    --height-building: 2em;
     --depth-building: 1;
 
     --col-building: 2;
@@ -565,14 +508,14 @@ body:has([value="view-0-deg-tile-3"]:checked) {
 /* DRAWING PATH */
 
 main article:nth-of-type(3) > div > div:nth-of-type(5) > :is(:nth-of-type(11), :nth-of-type(12), :nth-of-type(7), :nth-of-type(8), :nth-of-type(9), :nth-of-type(4)) {
-    background-color: #3c2f1a;
+    background-color: var(--road-color);;
 }
 
 /* BUILDING 1 */
 
 main section:nth-of-type(2) article:nth-of-type(3) > div > div:nth-of-type(5) > section:nth-of-type(1) {
     --width-building: 1;
-    --height-building: 6em;
+    --height-building: 2em;
     --depth-building: 1;
 
     --col-building: 3;
@@ -583,7 +526,7 @@ main section:nth-of-type(2) article:nth-of-type(3) > div > div:nth-of-type(5) > 
 
 main section:nth-of-type(2) article:nth-of-type(3) > div > div:nth-of-type(5) > section:nth-of-type(2) {
     --width-building: 1;
-    --height-building: 8em;
+    --height-building: 2em;
     --depth-building: 1;
 
     --col-building: 1;
@@ -631,14 +574,14 @@ body:has([value="view-0-deg-tile-4"]:checked) {
 /* DRAWING PATH */
 
 main section:nth-of-type(2) article:nth-of-type(4) > div > div:nth-of-type(5) > :is(:nth-of-type(11), :nth-of-type(12), :nth-of-type(13), :nth-of-type(14), :nth-of-type(19), :nth-of-type(24)) {
-    background-color: #3c2f1a;
+    background-color: var(--road-color);
 }
 
 /* BUILDING 1 */
 
 main section:nth-of-type(2) article:nth-of-type(4) > div > div:nth-of-type(5) > section:nth-of-type(1) {
     --width-building: 1;
-    --height-building: 5em;
+    --height-building: 2em;
     --depth-building: 1;
 
     --col-building: 3;
@@ -649,7 +592,7 @@ main section:nth-of-type(2) article:nth-of-type(4) > div > div:nth-of-type(5) > 
 
 main section:nth-of-type(2) article:nth-of-type(4) > div > div:nth-of-type(5) > section:nth-of-type(2) {
     --width-building: 1;
-    --height-building: 7em;
+    --height-building: 2em;
     --depth-building: 1;
 
     --col-building: 2;
@@ -660,7 +603,7 @@ main section:nth-of-type(2) article:nth-of-type(4) > div > div:nth-of-type(5) > 
 
 main section:nth-of-type(2) article:nth-of-type(4) > div > div:nth-of-type(5) > section:nth-of-type(3) {
     --width-building: 1;
-    --height-building: 9em;
+    --height-building: 2em;
     --depth-building: 1;
 
     --col-building: 4;
@@ -704,18 +647,29 @@ body:has([value="view-0-deg-tile-5"]:checked) {
 /* DRAWING PATH */
 
 main section:nth-of-type(2) article:nth-of-type(5) > div > div:nth-of-type(5) > :is(:nth-of-type(6), :nth-of-type(7), :nth-of-type(2), :nth-of-type(23), :nth-of-type(18), :nth-of-type(19), :nth-of-type(20)) {
-    background-color: #3c2f1a;
+    background-color: var(--road-color);
 }
 
 /* BUILDING 1 */
 
 main section:nth-of-type(2) article:nth-of-type(5) > div > div:nth-of-type(5) > section:nth-of-type(1) {
     --width-building: 1;
-    --height-building: 5em;
+    --height-building: 2em;
     --depth-building: 1;
 
     --col-building: 3;
     --row-building: 1;
+}
+
+/* BUILDING 2 */
+
+main section:nth-of-type(2) article:nth-of-type(5) > div > div:nth-of-type(5) > section:nth-of-type(2) {
+    --width-building: 1;
+    --height-building: 2em;
+    --depth-building: 1;
+
+    --col-building: 1;
+    --row-building: 4;
 }
 
 /* ******* */
@@ -759,14 +713,14 @@ body:has([value="view-0-deg-tile-6"]:checked) {
 /* DRAWING PATH */
 
 main section:nth-of-type(2) article:nth-of-type(6) > div > div:nth-of-type(5) > :is(:nth-of-type(6), :nth-of-type(7), :nth-of-type(8), :nth-of-type(13), :nth-of-type(14), :nth-of-type(15),) {
-    background-color: #3c2f1a;
+    background-color: var(--road-color);
 }
 
 /* BUILDING 1 */
 
 main section:nth-of-type(2) article:nth-of-type(6) > div > div:nth-of-type(5) > section:nth-of-type(1) {
     --width-building: 1;
-    --height-building: 10em;
+    --height-building: 2em;
     --depth-building: 1;
 
     --col-building: 3;
@@ -777,7 +731,7 @@ main section:nth-of-type(2) article:nth-of-type(6) > div > div:nth-of-type(5) > 
 
 main section:nth-of-type(2) article:nth-of-type(6) > div > div:nth-of-type(5) > section:nth-of-type(2) {
     --width-building: 1;
-    --height-building: 6em;
+    --height-building: 2em;
     --depth-building: 1;
 
     --col-building: 1;
@@ -794,7 +748,7 @@ main section:nth-of-type(2) article:nth-of-type(6) > div > div:nth-of-type(5) > 
 
 main section:nth-of-type(2) article:nth-of-type(6) > div > div:nth-of-type(5) > section:nth-of-type(3) {
     --width-building: 1;
-    --height-building: 12em;
+    --height-building: 2em;
     --depth-building: 1;
 
     --col-building: 4;
@@ -843,14 +797,14 @@ body:has([value="view-0-deg-tile-7"]:checked) {
 /* DRAWING PATH */
 
 main section:nth-of-type(2) article:nth-of-type(7) > div > div:nth-of-type(5) > :is(:nth-of-type(11), :nth-of-type(12), :nth-of-type(13), :nth-of-type(18), :nth-of-type(23)) {
-    background-color: #3c2f1a;
+    background-color: var(--road-color);
 }
 
 /* BUILDING 1 */
 
 main section:nth-of-type(2) article:nth-of-type(7) > div > div:nth-of-type(5) > section:nth-of-type(1) {
     --width-building: 1;
-    --height-building: 12em;
+    --height-building: 2em;
     --depth-building: 1;
 
     --col-building: 2;
@@ -861,7 +815,7 @@ main section:nth-of-type(2) article:nth-of-type(7) > div > div:nth-of-type(5) > 
 
 main section:nth-of-type(2) article:nth-of-type(7) > div > div:nth-of-type(5) > section:nth-of-type(2) {
     --width-building: 1;
-    --height-building: 9em;
+    --height-building: 2em;
     --depth-building: 1;
 
     --col-building: 3;
@@ -909,14 +863,14 @@ body:has([value="view-0-deg-tile-8"]:checked) {
 /* DRAWING PATH */
 
 main section:nth-of-type(2) article:nth-of-type(8) > div > div:nth-of-type(5) > :is(:nth-of-type(6), :nth-of-type(7), :nth-of-type(12), :nth-of-type(17), :nth-of-type(18), :nth-of-type(19), :nth-of-type(14), :nth-of-type(9), :nth-of-type(4)) {
-    background-color: #3c2f1a;
+    background-color: var(--road-color);
 }
 
 /* BUILDING 1 */
 
 main section:nth-of-type(2) article:nth-of-type(8) > div > div:nth-of-type(5) > section:nth-of-type(1) {
     --width-building: 1;
-    --height-building: 7em;
+    --height-building: 2em;
     --depth-building: 1;
 
     --col-building: 3;
@@ -965,14 +919,14 @@ body:has([value="view-0-deg-tile-9"]:checked) {
 /* DRAWING PATH */
 
 main section:nth-of-type(2) article:nth-of-type(9) > div > div:nth-of-type(5) > :is(:nth-of-type(6), :nth-of-type(7), :nth-of-type(8), :nth-of-type(9), :nth-of-type(10)) {
-    background-color: #3c2f1a;
+    background-color: var(--road-color);
 }
 
 /* BUILDING 1 */
 
 main section:nth-of-type(2) article:nth-of-type(9) > div > div:nth-of-type(5) > section:nth-of-type(1) {
     --width-building: 1;
-    --height-building: 4em;
+    --height-building: 2em;
     --depth-building: 1;
 
     --col-building: 2;
@@ -983,7 +937,7 @@ main section:nth-of-type(2) article:nth-of-type(9) > div > div:nth-of-type(5) > 
 
 main section:nth-of-type(2) article:nth-of-type(9) > div > div:nth-of-type(5) > section:nth-of-type(2) {
     --width-building: 1;
-    --height-building: 6em;
+    --height-building: 2em;
     --depth-building: 1;
 
     --col-building: 3;
@@ -994,7 +948,7 @@ main section:nth-of-type(2) article:nth-of-type(9) > div > div:nth-of-type(5) > 
 
 main section:nth-of-type(2) article:nth-of-type(9) > div > div:nth-of-type(5) > section:nth-of-type(3) {
     --width-building: 1;
-    --height-building: 10em;
+    --height-building: 2em;
     --depth-building: 1;
 
     --col-building: 4;
