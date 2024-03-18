@@ -36,7 +36,7 @@ a, button {
     --tile-planes-color: #ffffff;
 
     --building-plane-top-color: #FFFFFF;
-    --building-plane-front-color: #D1F704;
+    --building-plane-front-and-back-color: #D1F704;
     --building-planes-color: #000000;
 
     /* BORDERS */
