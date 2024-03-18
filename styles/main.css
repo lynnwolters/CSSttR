@@ -2,9 +2,11 @@
 /* MAIN */
 /* *** */
 
+/* MAIN */
+
 /* MAIN SECTION 1 */
 
-main section:nth-of-type(1) {
+main > section:nth-of-type(1) {
     height: 8em;
 
     display: flex;
@@ -12,9 +14,11 @@ main section:nth-of-type(1) {
     align-items: end;
 }
 
-main section:nth-of-type(1) h2 {
-    font-size: 1.2em;
+main > section:nth-of-type(1) h2 {
+    font-size: 1em;
     font-weight: 500;
+    text-align: center;
+    line-height: 130%;
     color: black;
 }
 
@@ -26,6 +30,61 @@ main section:nth-of-type(2) {
     display: grid;
     justify-content: center;
     align-items: center;
+}
+
+/*  MAIN SECTION 2 SUN */
+
+main > section:nth-of-type(3) {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: radial-gradient(rgb(255, 255, 255), rgb(197, 220, 255));
+}
+
+main > section:nth-of-type(3) article {
+    width: 48em;
+    aspect-ratio: 1/1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: red;
+}
+
+main > section:nth-of-type(3) article * {
+    aspect-ratio: 1/1;
+
+    position: absolute;
+
+    background-color: white;
+
+    border-radius: 100%;
+}
+
+main > section:nth-of-type(3) article div:nth-of-type(1) {
+    opacity: .2;
+}
+
+main > section:nth-of-type(3) article div:nth-of-type(2) {
+    opacity: .4;
+}
+
+main > section:nth-of-type(3) article div:nth-of-type(3) {
+    opacity: .6;
+}
+
+main > section:nth-of-type(3) article div:nth-of-type(4) {
+    opacity: .8;
 }
 
 /* SCENE */
@@ -46,7 +105,7 @@ main section:nth-of-type(2) > article {
     --tile-height: 1em;
 
     grid-area: 1/1;
-    --gap: 1em;
+    --gap: 2em;
 
     transition: 1s;
 }
@@ -69,7 +128,7 @@ main section:nth-of-type(2) article > div > div {
     justify-content: center;
     align-items: center; 
 
-    border: .04em solid rgba(0, 0, 0, 1);
+    /* border: .04em solid rgba(0, 0, 0, 1); */
 }
 
 /* SET TILE PLANE SIZES FOR FRONT, BACK, RIGHT AND LEFT */
@@ -91,7 +150,7 @@ main section:nth-of-type(2) article > div > div:nth-last-of-type(-n+2) {
 main section:nth-of-type(2) article > div > div:nth-of-type(1) {
 	transform: rotateY(0deg) translateZ(calc(var(--tile-width) / 2));
 
-    background-color: var(--tile-light-front, var(--color-4));
+    background-color: #80604c;
 }
 
 /* TILE PLANE BACK POSITIONING */
@@ -99,7 +158,7 @@ main section:nth-of-type(2) article > div > div:nth-of-type(1) {
 main section:nth-of-type(2) article > div > div:nth-of-type(2) {
 	transform: rotateY(0deg) translateZ(calc(var(--tile-width) / -2));
 
-    background-color: var(--tile-light-back, var(--color-5));
+    background-color: #3c2f1a;
 }
 
 /* TILE PLANE RIGHT POSITIONING */
@@ -107,7 +166,7 @@ main section:nth-of-type(2) article > div > div:nth-of-type(2) {
 main section:nth-of-type(2) article > div > div:nth-of-type(3) {
 	transform: rotateY(90deg) translateZ(calc(var(--tile-width) / 2));
 
-    background-color: var(--tile-light-right, var(--color-5));
+    background-color: #3c2f1a;
 }
 
 /* TILE PLANE LEFT POSITIONING */
@@ -115,7 +174,7 @@ main section:nth-of-type(2) article > div > div:nth-of-type(3) {
 main section:nth-of-type(2) article > div > div:nth-of-type(4) {
 	transform: rotateY(90deg) translateZ(calc(var(--tile-width) / -2));
 
-    background-color: var(--tile-light-left, var(--color-5));
+    background-color: #3c2f1a;
 }
 
 /* TILE PLANE TOP POSITIONING + GRID */
@@ -132,7 +191,7 @@ main section:nth-of-type(2) article > div > div:nth-of-type(5) {
         "p16 p17 p18 p19 p20"
         "p21 p22 p23 p24 p25";
 
-    background-color: var(--color-3);
+    background-color: #d8dc67;
 
     transition: .2s;
 }
@@ -140,7 +199,7 @@ main section:nth-of-type(2) article > div > div:nth-of-type(5) {
 main section:nth-of-type(2) article > div > div:nth-of-type(5) > div {
     pointer-events: none;
 
-    border: .04em solid rgba(0, 0, 0, 1);
+    /* border: .04em solid rgba(0, 0, 0, 1); */
 }
 
 main section:nth-of-type(2) article > div > div:nth-of-type(5) > div:nth-of-type(1) { grid-area: p01; }
@@ -187,7 +246,7 @@ main section:nth-of-type(2) article > div > div:nth-of-type(5) > section {
 main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div {
     position: absolute;
 
-    border: .04em solid rgba(0, 0, 0, 1);
+    opacity: 0;
 
     pointer-events: none;
 }
@@ -201,7 +260,7 @@ main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:n
     rotate: X -90deg;
     transform-origin: bottom;
 
-    background-color: var(--background-color-building-back);
+    background-color: #ffffff;
 }
 
 main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:nth-of-type(3) {
@@ -213,7 +272,7 @@ main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:n
     rotate: X 90deg;
     transform-origin: top;
 
-    background-color: var(--background-color-building-front);
+    background-color: #ffffff;
 }
 
 main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:nth-of-type(2) {
@@ -225,7 +284,7 @@ main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:n
     rotate: Y -90deg;
     transform-origin: left;
 
-    background-color: var(--background-color-building-right);
+    background-color: #ffffff;
 }
 
 main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:nth-of-type(4) {
@@ -237,7 +296,7 @@ main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:n
     rotate: Y 90deg;
     transform-origin: right;
 
-    background-color: var(--background-color-building-left);
+    background-color: #ffffff;
 }
 
 main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:nth-of-type(5) {
@@ -248,7 +307,7 @@ main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:n
     left: 0;
     translate: 0 0 var(--height-building);
 
-    background-color: var(--background-color-building-top);
+    background-color: #ffffff;
 }
 
 /* TILE PLANE BOTTOM POSITIONING */
@@ -258,7 +317,7 @@ main section:nth-of-type(2) article > div > div:nth-of-type(6) {
 
     background-color: var(--color-5);
 
-    /* box-shadow: 4px 4px 32px 0px rgba(0, 0, 0, .6); */
+    box-shadow: 4px 4px 32px 0px rgba(0, 0, 0, .6);
 }
 
 /* TILE PLANE TOP GRID FULL WIDTH AND HEIGHT + CENTER ITEMS  */
@@ -345,18 +404,14 @@ main section:nth-of-type(2) > article:nth-of-type(1) {
 
 body:has([value="view-90-deg-tile-1"]:checked) {
     --ry-tile-1: -90deg;
-    /* --tile-light-right: var(--color-4);
-    --tile-light-front: var(--color-5); */
 }
 
 body:has([value="view-180-deg-tile-1"]:checked) {
     --ry-tile-1: -180deg;
-    /* --tile-light-back: var(--color-4); */
 }
 
 body:has([value="view-270-deg-tile-1"]:checked) {
     --ry-tile-1: -270deg;
-    /* --tile-light-left: var(--color-4); */
 }
 
 body:has([value="view-0-deg-tile-1"]:checked) {
@@ -366,7 +421,7 @@ body:has([value="view-0-deg-tile-1"]:checked) {
 /* DRAWING PATH */
 
 main section:nth-of-type(2) article:nth-of-type(1) > div > div:nth-of-type(5) > :is(:nth-of-type(11), :nth-of-type(12), :nth-of-type(13), :nth-of-type(18), :nth-of-type(23)) {
-    background-color: var(--color-1);
+    background-color: #3c2f1a;
 }
 
 /* BUILDING 1 */
@@ -378,12 +433,6 @@ main section:nth-of-type(2) article:nth-of-type(1) > div > div:nth-of-type(5) > 
 
     --col-building: 2;
     --row-building: 4;
-
-    --background-color-building-back: var(--color-8);
-    --background-color-building-front: var(--color-8);
-    --background-color-building-right: var(--color-7);
-    --background-color-building-left: var(--color-8);
-    --background-color-building-top: var(--color-9);
 }
 
 /* BUILDING 2 */
@@ -395,12 +444,6 @@ main section:nth-of-type(2) article:nth-of-type(1) > div > div:nth-of-type(5) > 
 
     --col-building: 1;
     --row-building: 1;
-
-    --background-color-building-back: var(--color-8);
-    --background-color-building-front: var(--color-8);
-    --background-color-building-right: var(--color-7);
-    --background-color-building-left: var(--color-8);
-    --background-color-building-top: var(--color-9);
 }
 
 /* ******* */
@@ -427,18 +470,14 @@ main section:nth-of-type(2) > article:nth-of-type(2) {
 
 body:has([value="view-90-deg-tile-2"]:checked) {
     --ry-tile-2: -90deg;
-    /* --tile-light-right: var(--color-4);
-    --tile-light-front: var(--color-5); */
 }
 
 body:has([value="view-180-deg-tile-2"]:checked) {
     --ry-tile-2: -180deg;
-    /* --tile-light-back: var(--color-4); */
 }
 
 body:has([value="view-270-deg-tile-2"]:checked) {
     --ry-tile-2: -270deg;
-    /* --tile-light-left: var(--color-4); */
 }
 
 body:has([value="view-0-deg-tile-2"]:checked) {
@@ -448,7 +487,7 @@ body:has([value="view-0-deg-tile-2"]:checked) {
 /* DRAWING PATH */
 
 main section:nth-of-type(2) article:nth-of-type(2) > div > div:nth-of-type(5) > :is(:nth-of-type(14), :nth-of-type(12), :nth-of-type(11), :nth-of-type(13), :nth-of-type(19), :nth-of-type(24)) {
-    background-color: var(--color-1);
+    background-color: #3c2f1a;
 }
 
 /* BUILDING 1 */
@@ -460,12 +499,6 @@ main section:nth-of-type(2) article:nth-of-type(2) > div > div:nth-of-type(5) > 
 
     --col-building: 3;
     --row-building: 4;
-
-    --background-color-building-back: var(--color-8);
-    --background-color-building-front: var(--color-8);
-    --background-color-building-right: var(--color-7);
-    --background-color-building-left: var(--color-8);
-    --background-color-building-top: var(--color-9);
 }
 
 /* BUILDING 2 */
@@ -477,12 +510,6 @@ main section:nth-of-type(2) article:nth-of-type(2) > div > div:nth-of-type(5) > 
 
     --col-building: 4;
     --row-building: 2;
-
-    --background-color-building-back: var(--color-8);
-    --background-color-building-front: var(--color-8);
-    --background-color-building-right: var(--color-7);
-    --background-color-building-left: var(--color-8);
-    --background-color-building-top: var(--color-9);
 }
 
 /* BUILDING 3 */
@@ -494,12 +521,6 @@ main section:nth-of-type(2) article:nth-of-type(2) > div > div:nth-of-type(5) > 
 
     --col-building: 2;
     --row-building: 5;
-
-    --background-color-building-back: var(--color-8);
-    --background-color-building-front: var(--color-8);
-    --background-color-building-right: var(--color-7);
-    --background-color-building-left: var(--color-8);
-    --background-color-building-top: var(--color-9);
 }
 
 /* ******* */
@@ -527,18 +548,14 @@ main section:nth-of-type(2) > article:nth-of-type(3) {
 
 body:has([value="view-90-deg-tile-3"]:checked) {
     --ry-tile-3: -90deg;
-    /* --tile-light-right: var(--color-4);
-    --tile-light-front: var(--color-5); */
 }
 
 body:has([value="view-180-deg-tile-3"]:checked) {
     --ry-tile-3: -180deg;
-    /* --tile-light-back: var(--color-4); */
 }
 
 body:has([value="view-270-deg-tile-3"]:checked) {
     --ry-tile-3: -270deg;
-    /* --tile-light-left: var(--color-4); */
 }
 
 body:has([value="view-0-deg-tile-3"]:checked) {
@@ -548,7 +565,7 @@ body:has([value="view-0-deg-tile-3"]:checked) {
 /* DRAWING PATH */
 
 main article:nth-of-type(3) > div > div:nth-of-type(5) > :is(:nth-of-type(11), :nth-of-type(12), :nth-of-type(7), :nth-of-type(8), :nth-of-type(9), :nth-of-type(4)) {
-    background-color: var(--color-1);
+    background-color: #3c2f1a;
 }
 
 /* BUILDING 1 */
@@ -560,12 +577,6 @@ main section:nth-of-type(2) article:nth-of-type(3) > div > div:nth-of-type(5) > 
 
     --col-building: 3;
     --row-building: 3;
-
-    --background-color-building-back: var(--color-8);
-    --background-color-building-front: var(--color-8);
-    --background-color-building-right: var(--color-7);
-    --background-color-building-left: var(--color-8);
-    --background-color-building-top: var(--color-9);
 }
 
 /* BUILDING 2 */
@@ -577,12 +588,6 @@ main section:nth-of-type(2) article:nth-of-type(3) > div > div:nth-of-type(5) > 
 
     --col-building: 1;
     --row-building: 2;
-
-    --background-color-building-back: var(--color-8);
-    --background-color-building-front: var(--color-8);
-    --background-color-building-right: var(--color-7);
-    --background-color-building-left: var(--color-8);
-    --background-color-building-top: var(--color-9);
 }
 
 /* ******* */
@@ -609,18 +614,14 @@ main section:nth-of-type(2) > article:nth-of-type(4) {
 
 body:has([value="view-90-deg-tile-4"]:checked) {
     --ry-tile-4: -90deg;
-    /* --tile-light-right: var(--color-4);
-    --tile-light-front: var(--color-5); */
 }
 
 body:has([value="view-180-deg-tile-4"]:checked) {
     --ry-tile-4: -180deg;
-    /* --tile-light-back: var(--color-4); */
 }
 
 body:has([value="view-270-deg-tile-4"]:checked) {
     --ry-tile-4: -270deg;
-    /* --tile-light-left: var(--color-4); */
 }
 
 body:has([value="view-0-deg-tile-4"]:checked) {
@@ -630,75 +631,40 @@ body:has([value="view-0-deg-tile-4"]:checked) {
 /* DRAWING PATH */
 
 main section:nth-of-type(2) article:nth-of-type(4) > div > div:nth-of-type(5) > :is(:nth-of-type(11), :nth-of-type(12), :nth-of-type(13), :nth-of-type(14), :nth-of-type(19), :nth-of-type(24)) {
-    background-color: var(--color-1);
+    background-color: #3c2f1a;
 }
 
 /* BUILDING 1 */
 
 main section:nth-of-type(2) article:nth-of-type(4) > div > div:nth-of-type(5) > section:nth-of-type(1) {
     --width-building: 1;
-    --height-building: 12em;
+    --height-building: 5em;
     --depth-building: 1;
 
-    --col-building: 5;
-    --row-building: 3;
-
-    --background-color-building-back: var(--color-8);
-    --background-color-building-front: var(--color-8);
-    --background-color-building-right: var(--color-7);
-    --background-color-building-left: var(--color-8);
-    --background-color-building-top: var(--color-9);
+    --col-building: 3;
+    --row-building: 5;
 }
 
 /* BUILDING 2 */
 
 main section:nth-of-type(2) article:nth-of-type(4) > div > div:nth-of-type(5) > section:nth-of-type(2) {
     --width-building: 1;
-    --height-building: 5em;
+    --height-building: 7em;
     --depth-building: 1;
 
-    --col-building: 3;
-    --row-building: 5;
-
-    --background-color-building-back: var(--color-8);
-    --background-color-building-front: var(--color-8);
-    --background-color-building-right: var(--color-7);
-    --background-color-building-left: var(--color-8);
-    --background-color-building-top: var(--color-9);
+    --col-building: 2;
+    --row-building: 1;
 }
 
 /* BUILDING 3 */
 
 main section:nth-of-type(2) article:nth-of-type(4) > div > div:nth-of-type(5) > section:nth-of-type(3) {
     --width-building: 1;
-    --height-building: 7em;
-    --depth-building: 1;
-
-    --col-building: 2;
-    --row-building: 1;
-
-    --background-color-building-back: var(--color-8);
-    --background-color-building-front: var(--color-8);
-    --background-color-building-right: var(--color-7);
-    --background-color-building-left: var(--color-8);
-    --background-color-building-top: var(--color-9);
-}
-
-/* BUILDING 4 */
-
-main section:nth-of-type(2) article:nth-of-type(4) > div > div:nth-of-type(5) > section:nth-of-type(4) {
-    --width-building: 1;
     --height-building: 9em;
     --depth-building: 1;
 
     --col-building: 4;
     --row-building: 1;
-
-    --background-color-building-back: var(--color-8);
-    --background-color-building-front: var(--color-8);
-    --background-color-building-right: var(--color-7);
-    --background-color-building-left: var(--color-8);
-    --background-color-building-top: var(--color-9);
 }
 
 /* ******* */
@@ -721,18 +687,14 @@ main section:nth-of-type(2) > article:nth-of-type(5) {
 
 body:has([value="view-90-deg-tile-5"]:checked) {
     --ry-tile-5: -90deg;
-    /* --tile-light-right: var(--color-4);
-    --tile-light-front: var(--color-5); */
 }
 
 body:has([value="view-180-deg-tile-5"]:checked) {
     --ry-tile-5: -180deg;
-    /* --tile-light-back: var(--color-4); */
 }
 
 body:has([value="view-270-deg-tile-5"]:checked) {
     --ry-tile-5: -270deg;
-    /* --tile-light-left: var(--color-4); */
 }
 
 body:has([value="view-0-deg-tile-5"]:checked) {
@@ -742,7 +704,7 @@ body:has([value="view-0-deg-tile-5"]:checked) {
 /* DRAWING PATH */
 
 main section:nth-of-type(2) article:nth-of-type(5) > div > div:nth-of-type(5) > :is(:nth-of-type(6), :nth-of-type(7), :nth-of-type(2), :nth-of-type(23), :nth-of-type(18), :nth-of-type(19), :nth-of-type(20)) {
-    background-color: var(--color-1);
+    background-color: #3c2f1a;
 }
 
 /* BUILDING 1 */
@@ -754,29 +716,6 @@ main section:nth-of-type(2) article:nth-of-type(5) > div > div:nth-of-type(5) > 
 
     --col-building: 3;
     --row-building: 1;
-
-    --background-color-building-back: var(--color-8);
-    --background-color-building-front: var(--color-8);
-    --background-color-building-right: var(--color-7);
-    --background-color-building-left: var(--color-8);
-    --background-color-building-top: var(--color-9);
-}
-
-/* BUILDING 2 */
-
-main section:nth-of-type(2) article:nth-of-type(5) > div > div:nth-of-type(5) > section:nth-of-type(2) {
-    --width-building: 1;
-    --height-building: 7em;
-    --depth-building: 1;
-
-    --col-building: 2;
-    --row-building: 3;
-
-    --background-color-building-back: var(--color-8);
-    --background-color-building-front: var(--color-8);
-    --background-color-building-right: var(--color-7);
-    --background-color-building-left: var(--color-8);
-    --background-color-building-top: var(--color-9);
 }
 
 /* ******* */
@@ -803,18 +742,14 @@ main section:nth-of-type(2) > article:nth-of-type(6) {
 
 body:has([value="view-90-deg-tile-6"]:checked) {
     --ry-tile-6: -90deg;
-    /* --tile-light-right: var(--color-4);
-    --tile-light-front: var(--color-5); */
 }
 
 body:has([value="view-180-deg-tile-6"]:checked) {
     --ry-tile-6: -180deg;
-    /* --tile-light-back: var(--color-4); */
 }
 
 body:has([value="view-270-deg-tile-6"]:checked) {
     --ry-tile-6: -270deg;
-    /* --tile-light-left: var(--color-4); */
 }
 
 body:has([value="view-0-deg-tile-6"]:checked) {
@@ -824,7 +759,7 @@ body:has([value="view-0-deg-tile-6"]:checked) {
 /* DRAWING PATH */
 
 main section:nth-of-type(2) article:nth-of-type(6) > div > div:nth-of-type(5) > :is(:nth-of-type(6), :nth-of-type(7), :nth-of-type(8), :nth-of-type(13), :nth-of-type(14), :nth-of-type(15),) {
-    background-color: var(--color-1);
+    background-color: #3c2f1a;
 }
 
 /* BUILDING 1 */
@@ -836,12 +771,6 @@ main section:nth-of-type(2) article:nth-of-type(6) > div > div:nth-of-type(5) > 
 
     --col-building: 3;
     --row-building: 1;
-
-    --background-color-building-back: var(--color-8);
-    --background-color-building-front: var(--color-8);
-    --background-color-building-right: var(--color-7);
-    --background-color-building-left: var(--color-8);
-    --background-color-building-top: var(--color-9);
 }
 
 /* BUILDING 2 */
@@ -870,12 +799,6 @@ main section:nth-of-type(2) article:nth-of-type(6) > div > div:nth-of-type(5) > 
 
     --col-building: 4;
     --row-building: 5;
-
-    --background-color-building-back: var(--color-8);
-    --background-color-building-front: var(--color-8);
-    --background-color-building-right: var(--color-7);
-    --background-color-building-left: var(--color-8);
-    --background-color-building-top: var(--color-9);
 }
 
 /* ******* */
@@ -903,18 +826,14 @@ main section:nth-of-type(2) > article:nth-of-type(7) {
 
 body:has([value="view-90-deg-tile-7"]:checked) {
     --ry-tile-7: -90deg;
-    /* --tile-light-right: var(--color-4);
-    --tile-light-front: var(--color-5); */
 }
 
 body:has([value="view-180-deg-tile-7"]:checked) {
     --ry-tile-7: -180deg;
-    /* --tile-light-back: var(--color-4); */
 }
 
 body:has([value="view-270-deg-tile-7"]:checked) {
     --ry-tile-7: -270deg;
-    /* --tile-light-left: var(--color-4); */
 }
 
 body:has([value="view-0-deg-tile-7"]:checked) {
@@ -924,7 +843,7 @@ body:has([value="view-0-deg-tile-7"]:checked) {
 /* DRAWING PATH */
 
 main section:nth-of-type(2) article:nth-of-type(7) > div > div:nth-of-type(5) > :is(:nth-of-type(11), :nth-of-type(12), :nth-of-type(13), :nth-of-type(18), :nth-of-type(23)) {
-    background-color: var(--color-1);
+    background-color: #3c2f1a;
 }
 
 /* BUILDING 1 */
@@ -936,12 +855,6 @@ main section:nth-of-type(2) article:nth-of-type(7) > div > div:nth-of-type(5) > 
 
     --col-building: 2;
     --row-building: 4;
-
-    --background-color-building-back: var(--color-8);
-    --background-color-building-front: var(--color-8);
-    --background-color-building-right: var(--color-7);
-    --background-color-building-left: var(--color-8);
-    --background-color-building-top: var(--color-9);
 }
 
 /* BUILDING 2 */
@@ -953,12 +866,6 @@ main section:nth-of-type(2) article:nth-of-type(7) > div > div:nth-of-type(5) > 
 
     --col-building: 3;
     --row-building: 1;
-
-    --background-color-building-back: var(--color-8);
-    --background-color-building-front: var(--color-8);
-    --background-color-building-right: var(--color-7);
-    --background-color-building-left: var(--color-8);
-    --background-color-building-top: var(--color-9);
 }
 
 /* ******* */
@@ -985,18 +892,14 @@ main section:nth-of-type(2) > article:nth-of-type(8) {
 
 body:has([value="view-90-deg-tile-8"]:checked) {
     --ry-tile-8: -90deg;
-    /* --tile-light-right: var(--color-4);
-    --tile-light-front: var(--color-5); */
 }
 
 body:has([value="view-180-deg-tile-8"]:checked) {
     --ry-tile-8: -180deg;
-    /* --tile-light-back: var(--color-4); */
 }
 
 body:has([value="view-270-deg-tile-8"]:checked) {
     --ry-tile-8: -270deg;
-    /* --tile-light-left: var(--color-4); */
 }
 
 body:has([value="view-0-deg-tile-8"]:checked) {
@@ -1006,7 +909,7 @@ body:has([value="view-0-deg-tile-8"]:checked) {
 /* DRAWING PATH */
 
 main section:nth-of-type(2) article:nth-of-type(8) > div > div:nth-of-type(5) > :is(:nth-of-type(6), :nth-of-type(7), :nth-of-type(12), :nth-of-type(17), :nth-of-type(18), :nth-of-type(19), :nth-of-type(14), :nth-of-type(9), :nth-of-type(4)) {
-    background-color: var(--color-1);
+    background-color: #3c2f1a;
 }
 
 /* BUILDING 1 */
@@ -1018,12 +921,6 @@ main section:nth-of-type(2) article:nth-of-type(8) > div > div:nth-of-type(5) > 
 
     --col-building: 3;
     --row-building: 1;
-
-    --background-color-building-back: var(--color-8);
-    --background-color-building-front: var(--color-8);
-    --background-color-building-right: var(--color-7);
-    --background-color-building-left: var(--color-8);
-    --background-color-building-top: var(--color-9);
 }
 
 /* ******* */
@@ -1051,18 +948,14 @@ main section:nth-of-type(2) > article:nth-of-type(9) {
 
 body:has([value="view-90-deg-tile-9"]:checked) {
     --ry-tile-9: -90deg;
-    /* --tile-light-right: var(--color-4);
-    --tile-light-front: var(--color-5); */
 }
 
 body:has([value="view-180-deg-tile-9"]:checked) {
     --ry-tile-9: -180deg;
-    /* --tile-light-back: var(--color-4); */
 }
 
 body:has([value="view-270-deg-tile-9"]:checked) {
     --ry-tile-9: -270deg;
-    /* --tile-light-left: var(--color-4); */
 }
 
 body:has([value="view-0-deg-tile-9"]:checked) {
@@ -1072,7 +965,7 @@ body:has([value="view-0-deg-tile-9"]:checked) {
 /* DRAWING PATH */
 
 main section:nth-of-type(2) article:nth-of-type(9) > div > div:nth-of-type(5) > :is(:nth-of-type(6), :nth-of-type(7), :nth-of-type(8), :nth-of-type(9), :nth-of-type(10)) {
-    background-color: var(--color-1);
+    background-color: #3c2f1a;
 }
 
 /* BUILDING 1 */
@@ -1084,12 +977,6 @@ main section:nth-of-type(2) article:nth-of-type(9) > div > div:nth-of-type(5) > 
 
     --col-building: 2;
     --row-building: 3;
-
-    --background-color-building-back: var(--color-8);
-    --background-color-building-front: var(--color-8);
-    --background-color-building-right: var(--color-7);
-    --background-color-building-left: var(--color-8);
-    --background-color-building-top: var(--color-9);
 }
 
 /* BUILDING 2 */
@@ -1101,12 +988,6 @@ main section:nth-of-type(2) article:nth-of-type(9) > div > div:nth-of-type(5) > 
 
     --col-building: 3;
     --row-building: 1;
-
-    --background-color-building-back: var(--color-8);
-    --background-color-building-front: var(--color-8);
-    --background-color-building-right: var(--color-7);
-    --background-color-building-left: var(--color-8);
-    --background-color-building-top: var(--color-9);
 }
 
 /* BUILDING 3 */
@@ -1118,10 +999,4 @@ main section:nth-of-type(2) article:nth-of-type(9) > div > div:nth-of-type(5) > 
 
     --col-building: 4;
     --row-building: 4;
-
-    --background-color-building-back: var(--color-8);
-    --background-color-building-front: var(--color-8);
-    --background-color-building-right: var(--color-7);
-    --background-color-building-left: var(--color-8);
-    --background-color-building-top: var(--color-9);
 }

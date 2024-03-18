@@ -9,24 +9,6 @@
 }
 
 body {
-    background: radial-gradient(white, white);
-
-    font-family: 'Urbanist', sans-serif;
+    font-family: "Afacad", sans-serif;
     -webkit-font-smoothing: antialiased;
-}
-
-/* ***** */
-/* ROOT */
-/* *** */
-
-:root {
-    /* COLORS */
-    --color-1: black;
-    --color-2: #ffffff;
-    --color-3: #ffffff;
-    --color-4: #ffffff;
-    --color-5: #ffffff;
-    --color-7: #ffffff;
-    --color-8: #ffffff;
-    --color-9: #ffffff;
 }
