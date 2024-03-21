@@ -966,3 +966,23 @@ main section:nth-of-type(2) article:nth-of-type(9) > div > div:nth-of-type(5) > 
     --col-building: 4;
     --row-building: 4;
 }
+
+@media only screen and (max-width: 800px) {
+    main section:nth-of-type(2) > article {
+        height: 0;
+        --tile-width: 6em;
+        --tile-height: .8em;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    main > section:nth-of-type(1) h2 {
+        font-size: .75em;
+    }
+
+    main section:nth-of-type(2) > article {
+        height: 0;
+        --tile-width: 4em;
+        --tile-height: .6em;
+    }
+}
