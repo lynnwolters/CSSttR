@@ -36,7 +36,7 @@ header > div h1 span {
 
     letter-spacing: .05em;
 
-    animation: fall .4s linear forwards, bounce .5s linear forwards;
+    animation: fall .1s ease forwards;
 }
 
 header > div h1 span:nth-of-type(5) {
@@ -86,28 +86,15 @@ header > a:hover {
 
 @keyframes fall {
     0% {
-        /* opacity: 0; */
+        opacity: 0;
 
-        transform: translateY(-2em);
+        transform: translateY(-1.5em);
     }
     100% {
         opacity: 1;
 
         transform: translateY(0);
     }
-}
-
-@keyframes bounce {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-0.6em);
-    }
-    100% {
-        transform: translateY(0em);
-    }
-    
 }
 
 header > div h1 span:nth-child(1) { animation-delay: 0.1s;}

@@ -189,6 +189,8 @@ main section:nth-of-type(2) article > div > div:nth-of-type(5) > section {
 main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div {
     position: absolute;
 
+    opacity: var(--opacity, 1);
+
     border: var(--border);
 
     pointer-events: none;
