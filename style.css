@@ -6,6 +6,7 @@
 	margin: 0;	
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 
     font-family: "Afacad", sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -23,6 +24,8 @@ a, button {
     /* COLORS */
     --background-color: #D1F704;
 
+    --title-color: #A66CFF;
+    --title-outer-color: #000000;
     --explanation-color: #000000;
 
     --button-color: #ffffff;
@@ -38,6 +41,8 @@ a, button {
     --building-plane-top-color: #FFFFFF;
     --building-plane-front-and-back-color: #D1F704;
     --building-planes-color: #000000;
+
+    --box-shadow-color: #000000;
 
     /* BORDERS */
     --border: .04em solid rgba(0, 0, 0, .6);

@@ -20,7 +20,7 @@ footer div button {
     padding: 0 1.5em;
 
     background-color: var(--button-color);
-    box-shadow: .3em .3em 0 black;
+    box-shadow: .3em .3em 0 var(--box-shadow-color);
 
     border: var(--border);
 
@@ -36,7 +36,7 @@ footer div button:hover {
     left: .2em;
 
     background-color: var(--button-hover-color);
-    box-shadow: .2em .2em 0 black;
+    box-shadow: .2em .2em 0 var(--box-shadow-color);
 }
 
 footer div button:nth-of-type(1) {
