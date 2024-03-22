@@ -198,7 +198,7 @@ main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div {
 
 main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:nth-of-type(1) {
     width: 100%;
-    height: calc( var(--height-building) * var(--hfactor, 1));
+    height: var(--height-building);
 
     bottom: 100%;
     left: 0%;
@@ -210,7 +210,7 @@ main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:n
 
 main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:nth-of-type(3) {
     width: 100%;
-    height: calc( var(--height-building) * var(--hfactor, 1));
+    height: var(--height-building);
 
     top: 100%;
     left: 0%;
@@ -221,7 +221,7 @@ main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:n
 }
 
 main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:nth-of-type(2) {
-    width: calc( var(--height-building) * var(--hfactor, 1));
+    width: var(--height-building);
     height: 100%;
 
     top: 0;
@@ -233,7 +233,7 @@ main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:n
 }
 
 main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:nth-of-type(4) {
-    width: calc( var(--height-building) * var(--hfactor, 1));
+    width: var(--height-building);
     height: 100%;
 
     top: 0;
@@ -250,7 +250,7 @@ main section:nth-of-type(2) article > div > div:nth-of-type(5) > section > div:n
 
     top: 0;
     left: 0;
-    translate: 0 0 calc( var(--height-building) * var(--hfactor, 1));
+    translate: 0 0 var(--height-building);
 
     background-color: var(--building-plane-top-color);
 }
@@ -366,30 +366,6 @@ body:has([value="view-0-deg-tile-1"]:checked) {
 
 main section:nth-of-type(2) article:nth-of-type(1) > div > div:nth-of-type(5) > :is(:nth-of-type(11), :nth-of-type(12), :nth-of-type(13), :nth-of-type(18), :nth-of-type(23)) {
     background-color: var(--road-color);
-}
-
-/* HIDE BUILDINGS */
-@property --hfactor {
-  syntax: "<number>";
-  inherits: true;
-  initial-value: 1;
-}
-
-main section:nth-of-type(2) article > div > div:nth-of-type(5) > section {
-   transition: --hfactor .5s;
-}
-
-html:has( [value="hb"]:checked ) main section:nth-of-type(2) article > div > div:nth-of-type(5) > section {
-    --hfactor:0;
-}
-
-main section:nth-of-type(2) article > div > div:nth-of-type(5) > section div:nth-of-type(5) {
-    transition:background-color .5s;
-}
-
-
-html:has( [value="hb"]:checked ) main section:nth-of-type(2) article > div > div:nth-of-type(5) > section div:nth-of-type(5) {
-    background-color: var( --tile-plane-top-color);
 }
 
 /* BUILDING 1 */
