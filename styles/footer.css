@@ -8,6 +8,43 @@ footer {
     padding: 0 1.5em;
 
     & div {
+        & label {
+            height: 2.4em;
+
+            position: relative;
+            top: 0;
+            left: 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+            padding: 0 1.5em;
+
+            background-color: var(--button-color);
+            box-shadow: .3em .3em 0 var(--box-shadow-color);
+
+            border: var(--border);
+
+            font-size: 1em;
+            font-weight: 500;
+            color: var(--button-text-color);
+
+            transition: .2s linear;
+
+            & input {
+                display: none;
+            }
+
+            &:hover {
+                top: .2em;
+                left: .2em;
+            
+                background-color: var(--button-hover-color);
+                box-shadow: .2em .2em 0 var(--box-shadow-color);
+            }
+        }
+
         & button {
             height: 2.4em;
 
